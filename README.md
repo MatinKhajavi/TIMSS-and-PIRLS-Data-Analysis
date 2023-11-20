@@ -17,8 +17,8 @@ This repository houses a comprehensive and dynamic data analysis project that de
 - **Advanced Statistical Methods**: Utilize various statistical approaches including hypothesis testing, cluster analysis, and factor analysis for a robust analysis of the data.
 
 ## Contents
-- `TIMSS_&_PIRLS_Analysis.Rmd`: The main R Markdown file containing the analysis.
-- `Files/`: Directory containing HTML outputs and supplementary files.
+- `DataAnalysisProject.Rmd`: The main R Markdown file.
+- `Files/`: Directory containing R codes, HTML outputs and supplementary files.
 - `Data/`: The raw data files used in this analysis, sourced directly from the official studies.
 
 ## Tools and Technologies
