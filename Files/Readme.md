@@ -1,1 +1,1 @@
-## Directory containing HTML outputs and supplementary files.
+# Directory containing the source codes and the output files.
