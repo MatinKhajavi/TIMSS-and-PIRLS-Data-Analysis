@@ -1,0 +1,367 @@
+---
+title: "TIMSS 2015 4th Grade"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',message = F)
+
+knitr::read_chunk("TIMSS_4th_Grade.R")
+```
+
+```{r dataSection,echo=FALSE}
+
+```
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ بررسی عوامل موثر بر عملکرد دانش آموزان :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش به بررسی عوامل موثر در عملکرد دانش آموزان پرداخته ایم. هر یک از این عوامل کلی را با دسته بندی به عامل هایی کوچک تر بررسی کرده ایم.
+<br>
+برای نشان دادن تاثیر این عوامل از آزمون فرض Anova و در بعضی موارد از Chi-Squared استفاده کرده ایم. همینطور برای هر یک ، دو نمودار نیز رسم شده است.
+این اطلاعات بر حسب جواب مدیر ، معلم ها ، والدین و خود دانش آموزان به پرسشنامه های آزمون بدست آمده است.
+</p>
+
+###Timss 4th Grade {.tabset}
+
+####Home Environment Support
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت، میانگین امتیاز دانشآموزان را برحسب وضعیت محیط خانه با هم مقایسه کرده ایم. برای تعیین وضعیت محیط خانه، عوامل مختلفی مانند 
+</p>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>منابع فیزیکی مانند اتاق مجزا، میز مطالعه، اینترنت و ... </li>
+  <li>میزان تحصیلات پدر و مادر</li>
+  <li>صحبت کردن به زبان امتحان</li>
+</ul> 
+
+<br>
+<br>
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+منابع فیزیکی: 
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت دانش آموزان را بر حسب دسترسی به میز مطالعه، اتاق مجزا، کامپیوتر و ... به دسته های مختلفی تقسیم کرده ایم. 
+</p>
+
+```{r physicalResources}
+
+```
+
+<br>
+
+```{r avg}
+
+```
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+تحصیلات پدر و مادر:
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت، بیشترین تحصیلات پدر و مادر را در نظر گرفتیم و دانش آموزان را بر حسب آن دسته بندی کرده ایم و میانگین امتیاز هر دسته را به دست آوردیم.
+</p>
+
+
+
+```{r parentalEducation}
+```
+
+
+```{r avg1}
+
+```
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+تسلط به زمان آزمون: 
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت دانش آموزان را بر حسب اینکه چه مقدار در خانه به زبان آزمون صحبت میکنند دسته بندی کرده ایم. 
+</p>
+
+
+
+```{r speakLang}
+
+```
+
+
+```{r avg2}
+
+```
+
+
+####School Composition and Resources
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر وضعیت اقتصادی دانش آموزان بر عملکرد آن ها در آزمون اساس پاسخ مدیر مدارس. میبینیم که عملکرد مدارسی که بیشتر دانش آموزان آن از خانواده های مرفه هستند بهتر از بقیه مدارس می باشد.
+</p>
+<br>
+
+```{r economic}
+
+```
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+عملکرد مدارسی که دانش آموزان آن با مهارت کار با اعداد و خواندن وارد دبستان می شوند بهتر از مدارس دیگر است. 
+طلاعات بر اساس پاسخ مدیر می باشد.
+</p>
+<br>
+
+
+```{r skills}
+
+```
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر کمبود امکانات بر روی تدریس. عملکرد مدارسی که کمبودی ندارند به طور واضح بهتر است.
+</p>
+<br>
+
+
+```{r shortage}
+
+```
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+نظر معلمان نسبت به وضعیت و امکانات مدرسه. عملکرد در مدارسی که مشکل کمتری دارند بهتر از بقیه می باشد.
+<br>
+اطلاعات بر حسب جواب معلمان می باشد.
+</p>
+<br>
+
+
+```{r conditions}
+
+```
+
+
+####School Climate
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاکید مدرسه بر موفقیت درسی بر روی عملکرد دانش آموزان اثر دارد.
+</p>
+<br>
+
+```{r emphasis}
+```
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بر حسب جواب دانش آموزان به این مورد پرداخته ایم که آیا حس تعلق و راحتی در مدرسه تاثیری بر عملکرد آن ها دارد یا خیر.
+</p>
+<br>
+
+
+
+```{r belonging}
+
+```
+
+
+####School Discipline and Safety
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت امنیت و نظم مدرسه را با توجه به سوالات پرسیده شده از دانش آموزان،معلمان و مدیر مدرسه ارزیابی کردیم و میانگین هر دسته را به دست آوردیم.
+</p>
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه مدیر مدرسه
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیران به سوالاتی در رابطه با مشکلاتی از قبیل:
+</p>
+<ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>دیر آمدن به مدرسه</li>
+  <li>غیبت کردن</li>
+  <li>تقلب</li>
+  <li>دزدی</li>
+  <li>و ...</li>
+</ul> 
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+را بررسی کردیم و مدارس را مطابقا دسته بندی کردیم.
+</p>
+
+```{r principal}
+
+```
+
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه معلمان مدرسه
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت، مانند قسمت قبل پاسخ معلمان را به همان سوالات ارزیابی کردیم و دانش آموزان هر معلم را دسته بندی کردیم.
+</p>
+
+
+```{r teacher}
+
+```
+
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه دانش آموزان
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت میزان آزار و اذیتی که دانش آموزان از جانب دیگر دانش آموزان میبینند را بررسی کردیم
+</p>
+
+
+
+```{r student}
+```
+
+
+####Teachers’ and Principals’ Preparation
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر میزان تجربه مدیر مدرسه بر عملکرد مدرسه در آزمون.
+</p>
+<br>
+
+```{r experience}
+
+```
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر میزان تحصیلات مدیر بر روی عملکرد در آزمون.
+</p>
+<br>
+
+
+```{r principalEducation}
+
+```
+
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+عملکرد دانش آموزان بر اساس میزان تجربه معلمان.
+</p>
+<br>
+
+
+
+
+```{r teacherExperience}
+
+```
+
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی میزان تحصیلات معلمان بر عملکرد دانش آموزان آن ها.
+</p>
+<br>
+
+
+
+```{r teacherEducation}
+
+```
+
+####Classroom Instruction 
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+محدودیت معلمان در هنگام تدریس بر حسب نیاز دانش آموزان نیز بر عملکرد آن ها تاثیر دارد.
+</p>
+<br>
+
+
+```{r teacherLimited}
+
+```
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+عملکرد دانش آموزان بر حسب تعداد غیبت آن ها.
+</p>
+<br>
+
+```{r studentsAbsences}
+
+```
+<br>
+
+> <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+میزان زمان تدریس بر عملکرد دانش آموزان تاثیر دارد. نکته قابل توجه این است که این دو با یکدیگر رابطه عکس دارند.
+</p>
+<br>
+
+```{r timespent}
+
+```
+
+
+####Student Engagement and Attitudes
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+مشارکت در کلاس
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ دانش آموزان به سوالاتی در رابطه با کلاس ریاضی شان مانند : 
+</p>
+<ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>علاقه به مباحث کلاس</li>
+  <li>فن بیان معلم</li>
+  <li>تنوع در نحوه ی تدریس</li>
+  <li>و ... </li>
+</ul> 
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+را بررسی کردیم و بر حسب میزان مشارکت، آن ها را دسته بندی کردیم
+</p>
+
+
+```{r engagement}
+
+```
+
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+علاقه به ریاضی
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ دانش آموزان به سوالاتی در رابطه با علاقه به ریاضیات و یادگیری را بررسی کردیم.
+
+</p>
+
+```{r learning}
+
+```
+
+
+> <p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+اعتماد به نفس
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت دانش آموزان را بر حسب اعتماد به نفسشان در رابطه با ریاضی دسته بندی کردیم.
+</p>
+
+```{r confidence}
+
+```
+
+

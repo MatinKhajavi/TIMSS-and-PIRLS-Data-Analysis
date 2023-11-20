@@ -1,0 +1,188 @@
+---
+title: ""
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',fig.width=17,fig.height=12,message = F)
+
+knitr::read_chunk("GOOD_READER_GOOD_COUNTRIES.R")
+
+```
+
+```{r dataSection, echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+
+<br> <br>
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+What Makes a Good Reader
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□ Successful Countries’ Performance in PIRLS 2015
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students from Singapore and Russia had the best performance in PIRLS 2015. In these two countries, more than 25% of the participants were Advanced based on PIRLS benchmarks. 
+</p>
+<br>
+```{r }
+<<top2>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Hong Kong, Ireland and Poland ranked 3rd, 4th and 5th respectively. 
+<br> 
+20% percent of participants had reached the Advanced benchmark in these three countries. 
+</p>
+<br>
+
+```{r }
+<<top5>>
+
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Only 1% of Iran's population reached the advanced benchmark.
+</p>
+<br>
+
+```{r }
+<<iran>>
+
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□ The Concept of A "Good Reader" in PIRLS 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we study participants known as <i>Good Readers</i> in the PIRLS exam. In the previous sections we focused on factors contributing to students' performance, and here we focus more on visualizations. 
+<br> 
+Having parents who engage students from childhood in literary activities and also attending pre-primary school, is one of these <i>Good Readers</i>' traits. 
+</p>
+<br>
+
+```{r }
+<<earlyStart>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Attending richer schools with more facilities, is also one of their traits.
+</p>
+
+```{r }
+<<wellResourced>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+These group of students attend safer and more disciplined schools. 
+</p>
+
+<br>
+
+```{r }
+<<safe>>
+```
+
+
+##Farsi
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ عملکرد کشور های موفق در آزمون Pirls 2015 :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+دانش آموزان دو کشور روسیه و سنگاپور بهترین عملکرد را در آزمون Pirls 2015 داشته اند.
+<br>
+در این دو کشور بیشتر از 25 درصد دانش آموزان به معیار Advanced این آزمون رسیده اند.
+</p>
+<br>
+
+```{r top2}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در رده های بعدی 3 کشور هنگ کنگ ، ایرلند و لهستان قرار دارند.
+<br>
+در این 3 کشور یک پنجم از دانش آموزان به معیار Advanced این آزمون رسیده اند.
+</p>
+<br>
+
+```{r top5}
+
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+وضعیت ایران در این آزمون.
+در ایران فقط 1 درصد از دانش آموزان به معیار Advanced آزمون رسیدند.
+</p>
+<br>
+
+```{r iran}
+
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ مفهوم “خواننده خوب” در آزمون Pirls :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش به بررسی افرادی که در آزمون Pirls به عنوان "خواننده خوب" شناخته می شوند می پردازیم.
+<br>
+در قسمت های قبل به عوامل موثر در عملکرد پرداخته ایم و اینجا به تصویر پردازی بیشتر می پردازیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+داشتن والدینی که از کودکی فرزند را مشفول به کار های ادبی کند و همینطور رفتن به پیش دبستانی یمی از ویژگی های این افراد است.
+</p>
+<br>
+
+```{r earlyStart}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+رفتن به مدارسی با امکانات بیشتر و دانش آموزانی با سطح اقتصادی بالاتر نیز یکی از ویژگی های آن ها می باشد.
+</p>
+<br>
+
+```{r wellResourced}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+این گروه از دانش آموزان در مدسه هایی با امنیت و نظم بیشتر می روند.
+</p>
+<br>
+
+```{r safe}
+
+```
+

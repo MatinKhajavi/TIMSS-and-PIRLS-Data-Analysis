@@ -1,0 +1,739 @@
+---
+title: ""
+output: html_document
+---
+
+
+```{r setup, include=FALSE, cache = F}
+
+knitr::opts_chunk$set(warning = FALSE, fig.align='center',fig.width=12,fig.height=8,message = F, error = T)
+
+knitr::knit_hooks$set(
+   error = function(x, options) {
+     paste('\n\n<div class="alert alert-danger">',
+           gsub('##', '\n', gsub('^##\ Error', '**Error**', x)),
+           '</div>', sep = '\n')
+   },
+   warning = function(x, options) {
+     paste('\n\n<div class="alert alert-warning">',
+           gsub('##', '\n', gsub('^##\ Warning:', '**Warning**', x)),
+           '</div>', sep = '\n')
+   },
+   message = function(x, options) {
+     paste('\n\n<div class="alert alert-info">',
+           gsub('##', '\n', x),
+           '</div>', sep = '\n')
+   }
+)
+
+knitr::read_chunk("ClusterAnalysis.R")
+
+```
+
+```{r dataSection, echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+<br>
+<br>
+<p align="center" style="font-size:23pt; font-family:Calibri">
+Grouping Countries Based on TIMSS 2007-2015 Results
+</p>
+
+<br>
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Gathering The Data
+</p>
+
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri; text-indent:30px">
+First we have defined a grouping:
+</p>
+
+<br>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>In general:
+  <ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>Mathematics</li>
+  <li>Science</li>
+  </ul>
+  </li>
+</ul> 
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>Subject wise:
+  <ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>Algebra</li>
+  <li>Geometry</li>
+  <li>Chemistry</li>
+  <li>Geology</li>
+  <li>Biology</li>
+  <li>Physics</li>
+  <li>...</li>
+  </ul>
+  </li>
+</ul> 
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>Domain wise:
+  <ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>Application</li>
+  <li>Knowledge</li>
+  <li>Reasoning</li>
+  </ul>
+  </li>
+</ul> 
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Afterwards, we calculated students' individual scores in the aforementioned fields in the years 2007, 2011, and 2015. The reason why we haven't included the scores in 2003 is that the data only seperated the scores to Mathematics and Science. 
+</p>
+
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Futhermore, we calculated the average score for each country in these 3 years. For instance, the average scores for Iran and Singapore in the subject wise grouping is as follows:
+</p>
+
+<br> 
+
+```{r table, echo = F}
+```
+
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Clustering using k-means
+</p>
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+By Applying k-means to the data compiled in the previous section, we divided the participant countries in these 3 years to groups. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We performed this task using the `eclust` function in the `factoextra` package. 
+</p>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Each cluster's country is listed below:
+</p>
+
+
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	First cluster
+</p>
+
+<br>
+
+```{r clustering1, echo = F}
+```
+<br>
+
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	Second Cluster
+</p>
+
+<br>
+```{r clustering2, echo = F}
+```
+<br>
+
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	Third cluster
+</p>
+
+<br>
+```{r clustering3, echo = F}
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+It seems that the clusters are divided well. To be certain, we have plotted the first and second principal components as well as showing the clusters:
+</p>
+
+<br> <br> <br>
+```{r pca, echo = F}
+```
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+As you can see the clusters are distinct. 
+</p>
+
+
+<br> <br> <br>
+ 
+```{r pcaHC, echo = F}
+```
+
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we would like to see whether the number of clusters chosen was appropriate or not. To test this, we have used the Average Silhouette Width. 
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In general, it is clear that in order for a clustering to be acceptable, the instances inside each cluster must be close to each other, as well as distinguished from other clusters. 
+</p>
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We have defined this value for each instance:
+</p>
+<br> 
+
+$$ \begin{cases}
+    a_i      & \quad \text{How well } i \text{ is assigned to its cluster.} \\
+    b_i  & \quad \text{Lowest average distance of } i \text{ to all points in other clusters}
+  \end{cases} $$
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+One can consider $a_i$ as a measure of how much instance $i$ is alike other instances in its cluster.
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+$b_i$ can also be defined as a measure of how much instance $i$ differs from other clusters. In fact, $b_i$ is the distance between point $i$ and the closest cluster to it. We call this the *neighbour cluster*, because after the cluster it is already in, it's the best cluster for $i$. It is clear from definition that the higher this value, the better the clustering.  
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now, Silhouette Width for each point is defined as follows:
+</p>
+
+<br> 
+
+$$  s_i = \frac{b_i~-~a_i}{max(a_i, b_i)}$$ 
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In fact, it can also be written this
+</p>
+
+<br> <br>
+
+$$  s_i =
+  \begin{cases}
+    1 - \frac{a_i}{b_i}       & \quad \text{if } a_i < b_i\\
+    0  & \quad \text{if } a_i = b_i \\
+    \frac{b_i}{a_i} - 1 & \quad \text{if } a_i > b_i \\
+  \end{cases}
+ $$ 
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+واضح است که همواره $-1 < s_i < 1$
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+It is obvious that $s_i$ is always between $-1$ and $1$
+</p>
+
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Taking everything mentioned above into consideration, one can deduce that values of $s_i$ closer to $1$ indicate fine, and values closer to $-1$ indicate weak clustering. Values close to zero indicate that the corresponding data is close to the border of two neighbor clusters. 
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Taking everything mentioned above into consideration, one can deduce that values of $s_i$ closer to $1$ indicate fine, and values closer to $-1$ indicate weak clustering. Values close to zero indicate that the corresponding data is close to the border of two neighbor clusters. 
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+To obtain the Average Silhouette Width criterion, we simply take the average of $s_i$ for all data points. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In order to find the best k for clustering using k-means, we calculate the Average Silhoette Width for different values of k, and the maximum obtained value corresponds to the best k. 
+</p>
+
+<br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+To implement all the above, we use the function `kmeansruns` in the `fpc` package. 
+</p>
+
+<br>
+```{r kmeans}
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We can also gain the best value for k in this way:
+</p>
+
+<br>
+```{r}
+test$bestk
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The number we had initially chosen for k was 3, in order to reach three rankings of high, medium, and low based on TIMSS benchmarks. The Average Silhoette Width for $k = 2$ is as follows:
+</p>
+
+<br>
+```{r}
+test$crit[2]
+```
+<br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The Average Silhoette Width corresponding to $k = 3$:
+</p>
+<br>
+```{r}
+ test$crit[3]
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+As you can see the difference is neglectable.
+</p>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here we have included a plot of Average Silhoette Width based on different values of k. 
+</p>
+
+<br> <br> <br>
+
+```{r, echo = F}
+<<avgSW>>
+```
+
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In addition, the plot for each individual country's $s_i$ for k = 3 is included below:
+</p>
+
+<br> <br> <br>
+
+```{r, echo = F}
+<<SW>>
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	hierarchical clustering
+</p>
+
+<br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We have also grouped countries based on the Hierarchical Clustering method. Once again the countries belonging to each cluster are listed below:
+</p>
+
+
+<br>
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	First cluster
+</p>
+
+
+<br>
+```{r , echo = F}
+<<H_clustering>>
+```
+
+<br>
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	Second cluster
+</p>
+
+<br>
+```{r , echo = F}
+<<H_clus2>>
+```
+
+
+<br>
+<p align="left" style="font-size:14pt; font-family:Calibri">
+□	Third cluster
+</p>
+
+<br>
+```{r , echo = F}
+<<H_clus3>>
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Next, we have drawn the dendrogram. Iran's cluster is colored red. 
+</p>
+
+```{r , echo = F}
+<<dendrogram>>
+```
+
+<br> <br> <br>
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:21pt; font-family:B Nazanin">
+• دسته بندی کشورها بر اساس نتایج TIMSS 2007 - 2015
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ جمع آوری داده
+</p>
+
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+ابتدا امتیازهای مختلف را دسته بندی کردیم:
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>به صورت کلی:
+  <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>ریاضی</li>
+  <li>علوم</li>
+  </ul>
+  </p>
+  </li>
+  <li>درس به درس:
+  <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>جبر</li>
+  <li>هندسه</li>
+  <li>شیمی</li>
+  <li>زمین شناسی</li>
+  <li>زیست شناسی</li>
+  <li>فیزیک</li>
+  <li>و ...</li>
+  </ul> 
+  </p>
+  </li>
+  <li>زمینه:
+  <p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>کاربرد</li>
+  <li>استدلال</li>
+  <li>دانش</li>
+  </ul> 
+  </p>
+  </li>
+  </ul> 
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سپس در سالهای ۲۰۰۷، ۲۰۱۱ و ۲۰۱۵ امتیاز هر دانش آموز در این زمینهها را بدست آوردیم.
+علت اینکه از داده های سال ۲۰۰۳ به قبل استفاده نکردیم این بود که در آن سالها داده صرفا شامل امتیازات در زمینه ی علوم و ریاضی بود.
+</p>
+
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+پس از آن میانگین امتیاز در کشور در این ۳ سال را بدست آوردیم
+برای مثال میانگین امتیازات ایران و سنگاپور در زمینه های ریاضی، علوم، جبر، هندسه، شیمی، زیست شناسی و فیزیک را در زیر آورده ایم:
+</p>
+
+<br> 
+
+```{r table, echo = F}
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ خوشه بندی به روش k-means
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+با استفاده از داده هایی که در قسمت قبل جمع آوری کردیم، بااستفاده از روش k-means، کشورهای شرکت کننده در این ۳ سال را خوشه بندی کرده ایم.
+با استفاده از داده هایی که در قسمت قبل جمع آوری کردیم، به روش k-means کشورهای شرکت کننده در این ۳ سال را خوشه بندی کردیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای اینکار از تابع `eclust` واقع در پکیج `factoextra` استفاده کرده ایم.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+کشورهای هر دسته را در زیر آورده ایم:
+</p>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی اول:
+</p>
+<br>
+
+```{r clustering1, echo = F}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی دوم:
+</p>
+<br>
+```{r clustering2, echo = F}
+```
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی سوم:
+</p>
+<br>
+```{r clustering3, echo = F}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+به نظر میرسد که خوشه بندی خوب انجام شده است. برای اطمینان، نمودار عوامل ویژه ی اول و دوم آن را رسم کرده ایم و خوشه ها را نیز نشان داده ایم:
+</p>
+
+<br> <br> <br>
+```{r pca, echo = F}
+```
+ <br> <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همانطور که مشاهده می کنید، خوشه ها به خوبی تعیین شده اند.
+</p>
+
+<br> <br> <br>
+ 
+```{r pcaHC, echo = F}
+```
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال میخواهیم ببینیم آیا تعداد خوشه هایی که انتخاب کرده ایم (سه) مناسب است یا نه. 
+برای این کار از مقداری به نام Average Silhouette Width استفاده می کنیم. 
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+به صورت کلی، واضح است که برای اینکه یک خوشه بندی خوب باشد، باید به داده های داخل خوشه ی خودش تا حد امکان شبیه، و از داده های خوشه های دیگر متفاوت باشد.
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای هر داده مقادیر زیر را تعریف میکنیم:
+</p>
+
+<br> 
+
+$$ \begin{cases}
+    a_i      & \quad \text{How well } i \text{ is assigned to its cluster.} \\
+    b_i  & \quad \text{Lowest average distance of } i \text{ to all points in other clusters}
+  \end{cases} $$
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در واقع می توان a_i را معیاری از اینکه چقدر نقطه ی i به داده های داخل خوشه ی خودش شبیه است در نظر گرفت. با توجه به اینکه این داده از جنس "فاصله" است، هرچقدر مقدار آن کمتر باشد، خوشه بندی بهتر است.
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همچنین میتوان b_i را معیاری از اینکه نقطه ی i چقدر از داده های خوشه های دیگر متفاوت است تعریف کرد. واضح
+در واقع b_i فاصله ی بین نقطه ی i و نزدیک ترین خوشه به آن است. به این خوشه،  <i> خوشه ی همسایه</i> میگوییم زیرا بعد از خوشه ای که i الآن در آن است، بهترین خوشه برای i است.
+واضح است که هرچقدر این مقدار بیشتر باشد، خوشه بندی بهتر است.
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال برای هر نقطه Silhouette Width به صورت زیر تعریف می شود:
+</p>
+
+<br> 
+
+$$  s_i = \frac{b_i~-~a_i}{max(a_i, b_i)}$$ 
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در واقع می توان این مقدار را بدین صورت نیز نوشت:
+</p>
+
+<br> <br>
+
+$$  s_i =
+  \begin{cases}
+    1 - \frac{a_i}{b_i}       & \quad \text{if } a_i < b_i\\
+    0  & \quad \text{if } a_i = b_i \\
+    \frac{b_i}{a_i} - 1 & \quad \text{if } a_i > b_i \\
+  \end{cases}
+ $$ 
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+واضح است که همواره $-1 < s_i < 1$
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+با توجه به همه ی چیزهایی که تا به حال گفتیم، واضح است که هرچقدر مقدار $s_i$ به ۱ نزدیکتر باشد، یعنی خوشه بندی بهتر است و هرچقدر به -۱ نزدیکتر باشد یعنی خوشه بندی بدتر است. اگر $s_i$ نزدیک به صفر باشد به این معنی است که این داده روی مرز دو خوشه ی همسایه قرار دارد. 
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای بدست آوردن معیار Average Silhouette Width صرفا مقدار $s_i$ همه ی داده ها را میانگین میگیریم.
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای پیدا کردن بهترین مقدار k برای خوشه بندی به روش k-means مقدار Average Silhoette Width را برای مقادیر مختلف k بدست می آوریم و بیشترین مقدار آن متناظر با بهترین k است.
+</p>
+
+<br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای این کار از تابع `kmeansruns` واقع در پکیج `fpc` استفاده میکنیم.
+</p>
+
+<br>
+```{r kmeans}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+هم چنین میتوانیم بهترین مقدار k را به صورت زیر به دست آوریم:
+</p>
+
+<br>
+```{r}
+test$bestk
+```
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+مقداری که ما انتخاب کرده بودیم ۳ بود تا برحسب بنچ مارک های تیمز به سه دسته کشور قوی، متوسط و ضعیف برسیم. مقدار $asw$ متناظر با $k = 2$ را مشاهده میکنیم:
+</p>
+<br>
+```{r}
+test$crit[2]
+```
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+مقدار متناظر با $k = 3$ را نیز مشاهده میکنیم:
+</p>
+<br>
+```{r}
+test$crit[3]
+```
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+میبینیم که تفاوت چندانی با هم ندارند.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال نمودار Average Silhoette Width را برحسب مقدار k رسم میکنیم.
+</p>
+
+<br> <br> <br>
+
+```{r avgSW, echo = F}
+
+```
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همچنین نمودار $s_i$ های هر داده برای مقدار $k = 3$ را در زیر آورده ایم:
+</p>
+
+<br> <br> <br>
+
+```{r SW, echo = F}
+
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ خوشه بندی به روش سلسله مراتبی
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+با استفاده از روش سلسله مراتبی نیز داده ها را خوشه بندی کرده ایم. مجدد کشورهای مربوط به هر خوشه را در زیر آورده ایم:
+</p>
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی اول:
+</p>
+<br>
+```{r H_clustering, echo = F}
+
+```
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی دوم:
+</p>
+<br>
+```{r H_clus2, echo = F}
+
+```
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ دسته ی سوم:
+</p>
+<br>
+```{r H_clus3, echo = F}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال دندروگرام آن را رسم میکنیم. خوشه ی مربوط به ایران را رنگ قرمز مشخص کرده ایم:
+</p>
+```{r dendrogram, echo = F}
+
+```
+
+<br> <br> <br>

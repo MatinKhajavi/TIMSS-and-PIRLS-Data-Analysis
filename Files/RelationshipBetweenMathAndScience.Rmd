@@ -1,0 +1,491 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',fig.width=17,fig.height=12,message = F)
+
+knitr::read_chunk("RelationshipBetweenMathAndScience.R")
+```
+
+```{r dataSection}
+```
+
+# {.tabset }
+
+##English
+
+<p align="center" style="font-size:23pt; font-family:Calibri">
+Relationship Between Mathematics and Science 
+</p>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri; text-indent:30px">
+In this section we would like to focus on the relationship between Mathematics and Science and to see whether there even is one or not.
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri; text-indent:30px">
+At first we will draw the plot of these two subjects and calculate the correlation coefficient. 
+</p>
+
+
+
+```{r }
+<<chart1>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Coefficient
+</p>
+
+```{r}
+
+cor(student.stat4th15$mathScore,student.stat4th15$scienceScore)
+```
+
+<br>
+<br>
+
+```{r }
+<<chart2>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Coefficient
+</p>
+
+```{r}
+cor(student.stat4th15 %>% filter(idcntry==364) %>% .$mathScore,
+    student.stat4th15 %>% filter(idcntry==364) %>% .$scienceScore)
+
+```
+
+<br>
+<br>
+
+```{r }
+<<chart3>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Coefficient
+</p>
+```{r}
+
+cor(student.stat8th15$mathScore,student.stat8th15$scienceScore)
+```
+
+<br>
+<br>
+
+```{r }
+<<chart4>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Coefficient
+</p>
+
+```{r}
+cor(student.stat8th15 %>% filter(idcntry==364) %>% .$mathScore,
+    student.stat8th15 %>% filter(idcntry==364) %>% .$scienceScore)
+
+```
+
+<br>
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+As you can see, the correlation coefficient is high, inside Iran and internationally. The question below arises:
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Is there really such a high correlation between Mathematics and Science in reality? <i> No. </i>
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The correlation obtained above in general, is effected by multiple factors such as different performance levels in different schools, students' abilities and such. In fact in order to calculate the real correlation, we must calculate something called The Pooled Within-Group Correlation which will be lower than the previous correlation. 
+<br> 
+But still, one cannot deny the relationship between Mathematics and Science. The reason is obvious, for example a subject in Science such as Physics is closely related to Mathemtics.
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We countinue by studying the relationship between each subsection in Mathematicsc and Science. We have drawn the correlation matrix in each grade both interantionally and in Iran. 
+</p>
+
+<br>
+
+```{r }
+<<cor1>>
+```
+
+<br>
+
+```{r }
+<<cor2>>
+```
+
+<br>
+
+
+<br>
+
+```{r }
+<<cor3>>
+```
+
+<br>
+
+
+<br>
+
+```{r }
+<<cor4>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+By taking a look at the correlation matrices, the interesting thing that comes to mind is that the correlation between Mathematics and Science as a whole is considerably higher than the correlation between each subsection. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+What is the reason behind this? 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The reason is that the subsections have lesser items compared to Mathematics and Science as a whole and therefor will suffer more from measurement errors. These errors lower the correlation between each subsection.
+</p>
+
+<br>
+<br>
+
+<p align="left" style="font-size:21pt; font-family:Calibri">
+Predicting Science Subsections Based on Mathematics Subsections 8th Grade
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Naturally, performance in Science has an effect on performance in Mathematics, because as we mentioned above, a subject such as Physics directly influences Mathematics. 
+</p>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we would like to see the effect each subsection in Mathematics has on each subsection in Science. As seen above, the relationship between them is almost linear, therefor we use a linear multiple regression model. 
+</p>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+It is worth mentioning that, since boys perform better in, for example, Algebra and girls in Data and Chance, we have used gender and its interaction with each subsection for our model. 
+</p>
+<br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+However, we have seen that their coefficient are very low and do not have an effect on prediction. (The reason being that the gender gap is very low, which we have covered in detail in another section)
+</p>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The table below shows the coefficients for predicting each subsection in Mathematics based on subsections in Science. 
+</p>
+
+
+
+```{r }
+<<regression>>
+```
+
+
+<table class="table table-striped table-bordered" style="margin-left: auto; margin-right: auto;">
+ <thead>
+<tr>
+<th style="border-bottom:hidden" colspan="1"></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Regression Coefficients</div></th></tr>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="">Dependent Variable</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Math Subscle</div></th>
+</tr>
+<tr>
+<th style="border-bottom:hidden" colspan="1"></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Algebra</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Data And Chance</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Number</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Geometry</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> $\beta1$ </th>
+   <th style="text-align:center;"> $\beta2$ </th>
+   <th style="text-align:center;"> $\beta3$ </th>
+   <th style="text-align:center;"> $\beta4$ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Chemistry </td>
+   <td style="text-align:right;"> 0.282 </td>
+   <td style="text-align:right;"> 0.253 </td>
+   <td style="text-align:right;"> 0.088 </td>
+   <td style="text-align:right;"> 0.193 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Earth Science </td>
+   <td style="text-align:right;"> 0.004 </td>
+   <td style="text-align:right;"> 0.430 </td>
+   <td style="text-align:right;"> 0.190 </td>
+   <td style="text-align:right;"> 0.190 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Biology </td>
+   <td style="text-align:right;"> 0.158 </td>
+   <td style="text-align:right;"> 0.420 </td>
+   <td style="text-align:right;"> 0.110 </td>
+   <td style="text-align:right;"> 0.123 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Physics </td>
+   <td style="text-align:right;"> 0.142 </td>
+   <td style="text-align:right;"> 0.304 </td>
+   <td style="text-align:right;"> 0.178 </td>
+   <td style="text-align:right;"> 0.185 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+As expected, you can see that Geology, for example, has close to no effect on algebra, while Chemistry or Physics are closely related to Algebra. 
+</p>
+<br>
+<br>
+
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ رابطه بین ریاضی و علوم :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش می خواهیم به رابطه بین عملکرد در ریاضی و علوم بپردازیم و ببینیم آیا رابطه ای بین عملکرد در ریاضی و علوم به طور کلی وجود دارد یا خیر ؟
+<br>
+<br>
+ابتدا نمودار همبستگی بین نمره ریاضی و علوم را در جهان و ایران در هر دو پایه می کشیم و ضریب همبستگی را به دست می آوریم.
+</p>
+
+
+```{r chart1}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+ضریب همبستگی :
+</p>
+```{r}
+
+cor(student.stat4th15$mathScore,student.stat4th15$scienceScore)
+```
+<br>
+<br>
+
+```{r chart2}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+ضریب همبستگی :
+</p>
+```{r}
+cor(student.stat4th15 %>% filter(idcntry==364) %>% .$mathScore,
+    student.stat4th15 %>% filter(idcntry==364) %>% .$scienceScore)
+
+```
+<br>
+<br>
+
+```{r chart3}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+ضریب همبستگی :
+</p>
+```{r}
+
+cor(student.stat8th15$mathScore,student.stat8th15$scienceScore)
+```
+<br>
+<br>
+
+```{r chart4}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+ضریب همبستگی :
+</p>
+```{r}
+cor(student.stat8th15 %>% filter(idcntry==364) %>% .$mathScore,
+    student.stat8th15 %>% filter(idcntry==364) %>% .$scienceScore)
+
+```
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+می بینیم که چه در سطح جهانی و چه در ایران ضریب همبستگی بالا می باشد. سوالی که پیش می آید :
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+آیا واقعا چنین همبستگی بین ریاضی و علوم در واقعیت وجود دارد ؟ خیر
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+مقدار همبستگی که اینجا به طور کلی به دست می آوریم تحت تاثیر تفاوت در عملکرد در مدرسه های متفاوت ، توانایی دانش آموزان و عوامل دیگر می باشد. در حقیقت برای بدست آوردن همبستگی واقعی باید Pooled Withing-Group Correlation را بدست آوریم که مقدار آن کمتر از مقدار بدست آمده خواهد بود.
+<br>
+اما باز هم نمی توان وجود رابطه بین عملکرد در ریاضی و علوم را انکار کرد. دلیل آن هم تا حدی واضح می باشد ، به عنوان مثال در بخش علوم ، درسی همانند فیزیک وابستگی زیادی به ریاضی دارد.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+در ادامه به بررسی رابطه بین هر یک از زیربخش های علوم و ریاضی می پردازیم. ماتریس همبستگی در هر یک از پایه ها و در هر دو سطح جهانی و در ایران را رسم می کنیم.
+</p>
+
+
+<br>
+
+```{r cor1}
+
+```
+
+<br>
+
+```{r cor2}
+
+```
+
+<br>
+
+
+<br>
+
+```{r cor3}
+
+```
+
+<br>
+
+
+<br>
+
+```{r cor4}
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+با نگاه به نمودار های بالا ، نکته ای که قابل توجه می باشد این است که همبستگی بین ریاضی و علوم به طور کلی به طور قابل توجهی بالاتر است از همبستگی بین زیر گروه های ریاضی و علوم.
+<br>
+دلیل آن چیست ؟
+<br>
+دلیل آن این است که زیر گروه ها دارای تعداد آیتم کمتری نسبت به ریاضی و علوم به طور کلی می باشند و به همین دلیل دارای خطای اندازه گیری بیشتری می باشند و همین خطا های اندازه گیری باعث تضعیف بیشتر همبستگی بین زیر گروه ها می شود.
+</p>
+
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+پیش بینی زیر گروه های علوم بر اساس زیر گروه های ریاضی پایه هشتم :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+عملکرد در علوم ، به طور طبیعی به عملکرد در ریاضی بستگی دارد زیرا همانطور که بالاتر گفتیم علمی مانند فیزیک وابسته به ریاضیات می باشد.
+<br>
+حال می خواهیم تاثیر هر یک از زیر گروه های ریاضی را بر زیر گروه های علوم ببینیم و هماطور که بالاتر دیدیم رابطه بین علوم و ریاضی تقریبا خطی است ، پس از رگرسیون خطی چند گانه استفاده می کنیم.
+<br>
+همینطور این به دلیل آن که ، به عنوان مثال پسر ها در جبر عملکرد بهتری دارند و یا دختر ها در سوالات داده و احتمالی عملکرد بهتری داشته باشند ، از جنسیت و اثر متقابل آن (Interaction) با زیر گروه ها نیز برای مدل خود استفاده می کنیم.
+<br>
+ولی دیدیم که Coefficients آن ها بسیار کم است و تاثیری در پیش بینی ندارد. (دلیل آن این است که تفاوت عملکرد دختر ها و پسر ها بسیار ناچیز است ، که این موضوع را در بخش دیگر بررسی کردیم.) 
+<br>
+جدول زیر Coefficients های پیش بینی هر یک از بخش ها را بر اساس زیر گروه های ریاضی نشان می دهد.
+</p>
+
+```{r regression}
+
+```
+
+
+<table class="table table-striped table-bordered" style="margin-left: auto; margin-right: auto;">
+ <thead>
+<tr>
+<th style="border-bottom:hidden" colspan="1"></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Regression Coefficients</div></th></tr>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="">Dependent Variable</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Math Subscle</div></th>
+</tr>
+<tr>
+<th style="border-bottom:hidden" colspan="1"></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Algebra</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Data And Chance</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Number</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">Geometry</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> $\beta1$ </th>
+   <th style="text-align:center;"> $\beta2$ </th>
+   <th style="text-align:center;"> $\beta3$ </th>
+   <th style="text-align:center;"> $\beta4$ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Chemistry </td>
+   <td style="text-align:right;"> 0.282 </td>
+   <td style="text-align:right;"> 0.253 </td>
+   <td style="text-align:right;"> 0.088 </td>
+   <td style="text-align:right;"> 0.193 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Earth Science </td>
+   <td style="text-align:right;"> 0.004 </td>
+   <td style="text-align:right;"> 0.430 </td>
+   <td style="text-align:right;"> 0.190 </td>
+   <td style="text-align:right;"> 0.190 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Biology </td>
+   <td style="text-align:right;"> 0.158 </td>
+   <td style="text-align:right;"> 0.420 </td>
+   <td style="text-align:right;"> 0.110 </td>
+   <td style="text-align:right;"> 0.123 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Physics </td>
+   <td style="text-align:right;"> 0.142 </td>
+   <td style="text-align:right;"> 0.304 </td>
+   <td style="text-align:right;"> 0.178 </td>
+   <td style="text-align:right;"> 0.185 </td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin">
+هماطور که انتظار می رفت میبینیم که مثلا در زمین شناسی ، جبر تقریبا بی تاثیر می باشد و در فیزیک و یا شیمی جبر تاثیر دارد.
+</p>
+
+<br>
+<br>
+

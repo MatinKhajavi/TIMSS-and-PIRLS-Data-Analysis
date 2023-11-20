@@ -1,0 +1,259 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',fig.width=17,fig.height=17,message = F)
+knitr::read_chunk('CountriesComaprison.R')
+
+```
+
+```{r dataSection}
+```
+
+# {.tabset }
+
+
+##English
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+A Comparison of Worldwide Performance in TIMSS 2015
+</p>
+
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	A Display of Participant Countries' Average
+</p>
+
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, at first in order to get a feel for it, we have drawn the plot of eacch country's average score. 
+</p>
+
+<br> <br> <br>
+
+```{r , echo = F}
+<<avgResult>>
+```
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Comparing Pairwise Average
+</p>
+
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+First we need a suitable hypothesis test to compare score mean. Here we have randomly seleccted 10 participant countries and drawn the density plot of the students' scores. 
+</p>
+<br> <br> <br>
+
+```{r , echo = F}
+<<countries2v2>>
+```
+
+<br> <br> <br> 
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+It seems like the scores follow a normal distribution. Therefor we have used the `t.test()` function for pairwise comparison. 
+</p>
+
+<br> <br> 
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+When performing a `t.test()` one must take into considerationg that with ~~great~~ large sample sizes ~~comes great responsibility~~, even slight differences in mean result in a very low $p-value$ and therefor rejecting the null hypothesis, when in reality, the two populations might not differ that much. 
+</p>
+
+<br> <br> 
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+To address this issue, we simply take a random sample of 1000 students from each country, and perform the hypothesis test on them. 
+</p>
+
+<br> <br> <br>
+
+```{r , echo = F}
+<<countries>>
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	A Display of Participants' Progression Throughout Time 
+</p>
+
+
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we've provided an animation of different countries' status between the years 2003 til 2015. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Since some countries did not participate in all years, We have decided not to use a Line Chart which is generally used for displaying time series, and instead opted to use Bar Chart. 
+</p>
+
+<br> <br> <br>
+
+
+```{r , echo = F}
+<<countries3>>
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Analysing Students' Change in Performance From TIMSS 2011 to TIMSS 2015
+</p>
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section we've used the data for TIMSS 2015 8th grade and TIMSS 2011 4th grade. We've compared each country's performance in 2011 to 2015. Because the comparison is held between two datasets of the same population but with different conditions, we have used the Wilcoxon Signed-Rank test. 
+</p>
+
+<br> <br> <br>
+
+```{r , echo = F}
+<<coutriesChange>>
+```
+
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Each country's improvement or decline in 2015 compared to 2011 can also be seen in the chart below: 
+</p>
+
+<br> <br> <br>
+
+
+```{r }
+<<improvement>>
+```
+
+<br> <br> <br>
+
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:21pt; font-family:B Nazanin">
+• عملکرد جهانی در TIMSS 2015
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ نمایش میانگین کشورها
+</p>
+
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش ابتدا نمایی از میانگین عملکرد کشورها در این مسابقه ارائه کردهایم:
+</p>
+
+
+<br> <br> <br>
+
+```{r avgResult, echo = F}
+
+```
+
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ مقایسه ی میانگین ۲ به ۲ کشورها
+</p>
+
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+ابتدا نیاز به یک آزمون فرض مناسب برای مقایسه ی میانگین کشور ها داریم. برای این منظور نمونه ای ۱۰ عضوی از کشورهای شرکت کننده در تیمز تهیه کرده ایم و توزیع امتیازات دانش آموزان در مسابقات تیمز را رسم کرده ایم.
+</p>
+
+<br> <br> <br>
+
+```{r countries2v2, echo = F}
+
+```
+
+<br> <br> <br> 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+با توجه به نمودار بالا، به نظر میرسد که دادهها از توزیع نرمال پیروی میکنند. برای همین برای مقایسه ی دو به دوی کشور ها از تابع `t.test()` استفاده میکنیم.
+</p>
+
+<br> <br> 
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در `t.test()` زمانی که تعداد داده ها زیاد باشد، حتی تفاوتی جزئی در میانگین نیز موجب ایجاد p-value بسیار پایین و در نتیجه رد فرض صفر میشود، در حالیکه شاید واقعا این دو جامعهی آماری تفاوت چندانی با هم نداشته باشند.
+</p>
+<br> <br> 
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای رفع این مشکل از دانش آموزان شرکت کننده در هر کشور، یک نمونهی آماری تصادفی به اندازه ی ۱۰۰۰ نفر گرفتیم و روی آنها آزمون فرض را پیاده سازی کردیم.
+</p>
+
+<br> <br> <br>
+
+```{r countries, echo = F}
+
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ بررسی وضعیت کشورها در طول زمان
+</p>
+
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت انیمیشنی از وضعیت کشورهای مختلف از سال ۲۰۰۳ تا ۲۰۱۵ تهیه کرده ایم. داده به نظر نسبتا ناقص میرسد، برای همین تصمیم گرفتیم از Line Chart که عموما برای نشان دادن دادههای زمانی به کار میرود استفاده نکنیم و از Bar Chart استفاده کردهایم. 
+</p>
+
+<br> <br> <br>
+
+
+```{r countries3, echo = F}
+
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ بررسی تغییر وضعیت دانش آموزان بین 2015 TIMSS و 2011 TIMSS
+</p>
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت از داده تیمز ۲۰۱۵ سال هشتم و تیمز ۲۰۱۱ سال چهارم استفاده کرده ایم. عملکرد هر کشور را در هر دو سال با هم مقایسه کردیم. چون مقایسه بین دو داده جمع آوری شده از یک جمعیت ولی با شرایط متفاوت انجام می شود، از آزمون فرض wilcoxon signed-rank استفاده میکنیم. 
+</p>
+
+<br> <br> <br>
+
+```{r coutriesChange, echo = F}
+
+```
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همچنین میزان پیشرفت یا پسرفت هر کشور در سال ۲۰۱۵ نسبت به سال ۲۰۱۱ در نمودار زیر قابل مشاهده است:
+</p>
+
+<br> <br> <br>
+
+
+```{r improvement}
+
+```
+
+<br> <br> <br>

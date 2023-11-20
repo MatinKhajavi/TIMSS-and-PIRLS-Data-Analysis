@@ -1,0 +1,590 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, fig.align='center',message = F)
+
+knitr::read_chunk("IRAN.R")
+
+
+```
+
+```{r dataSection, echo=FALSE}
+```
+
+
+# {.tabset }
+
+##English
+
+<br> <br> 
+<p align="center" style="font-size:21pt; font-family:Calibri">
+Iran Throughout The Years 
+</p>
+
+<br> 
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	Iran's
+Statistics in TIMSS </p> <p align="left" style="font-size:15pt;
+font-family:Calibri;  text-indent:30px"> In this section, we first give a report
+on Iran's overall status (such as international ranking, number of participants,
+average in different fields, etc.) and as before, visualize the effect of
+different factors using charts. </p>
+
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	A Comparison of
+The Number of Contestants </p>
+
+<br>
+
+```{r , fig.width=12, fig.height=9}
+<<numOfPARTICIPANTS>>
+```
+
+<br>
+ 
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	A Comparison of
+The Average Score in Mathematics, Science And in General </p>
+
+<br> 
+
+<br>
+```{r }
+<<iranAvg>>
+```
+
+<br> <br> <br>
+
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	Average Score in
+Different Fields Through The Years </p>
+
+```{r , fig.width=12, fig.height=9}
+<<iranAvg2>>
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	International
+Ranking Through The Years </p>
+
+<br>
+
+```{r }
+<<iranRank>>
+```
+<br>
+
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri"> □	Iranian
+Participants' Performance Based on TIMSS Benchmarks </p>
+
+<br>
+
+```{r }
+<<benchmarkpercentage>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px"> 
+In this section, just like the previous sections, we provide a summary of
+factors impacting students' scores. Since we have already performed hypothesis
+tests to study these factors, in this section we focus mostly on visualization. 
+</p>
+
+
+###{.tabset}
+####Home Environment Support
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px"> 
+In this section, we studies students' answers to these questions: </p>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri"
+align="left"> <li>Highest level of education my mother or father.</li> <li>Being
+in possession of their own room.</li> <li>Number of books in their house.</li> 
+</ul>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px"> 
+Based on their answers we categorized them as such: </p>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri"
+align="left"> <li>Many resources: having a personal room as well as internet, a
+minimum level of bachelor's degree from either parent, having at least a 100
+books at home.</li> <li>Few resources: neither having a personal room nor
+internet, a maximum level of primary school degree by both parents, having less
+than 24 books at home. </li> <li>Some resources: anything not falling into the
+other two categories. </li> </ul>
+
+```{r }
+<<data>>
+```
+
+```{r }
+<<chart1>>
+```
+
+####School Composition and Resources
+
+<p align="left" style="font-size:15pt;
+font-family:Calibri;  text-indent:30px"> In this section, we studies students'
+answers to these questions regarding school facilities and their financical
+state. </p>
+
+<p align="left" style="font-size:17pt; font-family:Calibri;  text-indent:30px"> 
+Financial State 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px"> 
+In this section, we have studies the principal's questions to the question "Approximately what percentage of students in your school have the following backgrounds?", the two possible choices for which were "Come from economically disadvantaged home" and "Come from economically affluenthomes"
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px"> 
+Afterwards we put school into these three categories: More Affluent, Neutral, and More Disadvantages.
+</p>
+
+```{r }
+<<economic>>
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri;  text-indent:30px"> 
+Education Facilities
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we've studied the principal's answers to questions regarding educational facilities. 
+
+</p>
+
+```{r }
+<<resource>>
+```
+
+
+####School Climate
+
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section we have categorized the schools' environments based on hte principal's, the Mathematics teachers', and the science teachers' point of view. In addition, we've shows the average of each group. 
+</p>
+
+
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	The Principal's Point of View
+</p>
+ <br>
+ 
+
+```{r }
+<<principal>>
+```
+
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	The Mathematics Teachers' Point of View
+</p>
+<br>
+
+
+
+```{r }
+<<teacher>>
+```
+
+<br>
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	The Science Teachers' Point of View
+</p>
+
+<br>
+
+```{r }
+<<science>>
+```
+
+
+####School Discipline and Safety
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section we've studies the principal's, the teachers', as well as the students' responses to questions regarding safety and siscipline.
+</p>
+
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	School Safety: Student Bullyin
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here you can view the effect harassment from other students has on students' scores. 
+</p>
+<br>
+
+```{r }
+<<bullying>>
+```
+
+<br>
+
+<br>
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	School Safety: Teachers' Point of View
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here, we have studied the teachers' responses to questions regarding school location, teachers' feeling of safety in school, students' respect towards teachers, school rules and discipline, etc. 
+</p>
+
+```{r }
+<<safe>>
+```
+
+<br>
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	School Discipline: Teachers' Point of View
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here we have studies the principal's responses to questions regarding the school's issues, such as absenteeism, lateness, cheating, class population, theft, etc. 
+</p>
+
+<br>
+
+```{r }
+<<principal2>>
+```
+
+####Student Engagement and Attitudes
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we've studies students' view on Mathematics. 
+</p>
+
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Interest in Mathematics
+</p>
+<br>
+
+
+```{r }
+<<likemath>>
+```
+
+<br>
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Confidence in Mathematics 
+</p>
+ 
+***
+
+```{r }
+<<confidence>>
+```
+<br>
+<br>
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Value for Mathematics
+</p>
+<br> 
+
+```{r }
+<<value>>
+```
+
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ وضعیت ایران در طول سال ها در آزمون Timss :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش، ابتدا گزارشی از وضعیت کلی ایران (مانند رتبه ی جهانی، تعداد شرکتکننده ها، میانگین امتیاز در زمینه های مختلف و ... ) ارائه  داده ایم و سپس مانند بالا، تاثیر عوامل مختلف را با نمودار نشان داده ایم. 
+</p>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+مقایسه ی تعداد شرکت کننده های ایران با سایر کشور ها :
+</p>
+
+<br>
+
+```{r numOfPARTICIPANTS, fig.width=12, fig.height=9}
+```
+ <br>
+ 
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+مقایسه ی میانگین امتیاز ایران در ریاضی، علوم و به صورت کلی
+</p>
+
+<br>
+```{r iranAvg}
+
+```
+
+<br>
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+مقایسه ای از وضعیت ایران در موضوعاتی مانند فیزیک، هندسه و ... 
+</p>
+
+```{r , fig.width=12, fig.height=9}
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+رتبه ی ایران در جهان در طول زمان:
+</p>
+<br>
+
+```{r iranRank}
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+وضعیت شرکت کننده های ایرانی بر حسب محک های TIMSS
+</p>
+<br>
+
+
+```{r benchmarkpercentage}
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت نیز مانند قسمت پیشین، خلاصه ای از عوامل موثر بر امتیاز دانش آموزان ارائه کرده ایم. با توجه به اینکه قبلا آزمون های فرضی برای بررسی تاثیر این عوامل ارائه کرده ایم، در این قسمت تمرکز خود را بیشتر بر روی نمودار میگذاریم.
+</p>
+
+
+###{.tabset}
+####Home Environment Support
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ دانش آموزان به سوالات زیر را مورد بررسی قرار دادیم: 
+</p>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>بالاترین سطح تحصیلات والدین</li>
+  <li>داشتن اتاق متعلق به خود و اینترنت در خانه</li>
+  <li>تعداد کتاب های موجود در خانه</li>
+</ul> 
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بر حسب پاسخ های دانش آموزان آنان را به صورت زیر دسته بندی کردیم:
+</p>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>منابع زیاد: داشتن اتاق شخصی به همراه اینترنت، تحصیلات حداقل معادل لیسانس در پدر و مادر، و داشتن حداقل ۱۰۰ کتاب در خانه</li>
+  <li>منابع کم: عدم داشتن اتاق شخصی و همچنین اینترنت، حداکثر تحصیلات معادل دبستان در پدر و مادر، تعداد کتاب زیر ۲۵ عدد در خانه</li>
+  <li>منابع متوسط: سایر موارد</li>
+</ul> 
+
+
+```{r data}
+
+```
+
+```{r chart1}
+
+```
+
+####School Composition and Resources
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیران مدارس به سوالاتی در رابطه با امکانات مدرسه و وضعیت اقتصادی دانش آموزان را بررسی کردیم. 
+</p>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+وضعیت اقتصادی دانش آموزان
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیران به سوالات “چند درصد دانش آموزان وضعیت اقتصادی بدی/خوبی دارند؟” را بررسی کردیم
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سپس، مدارس را به سه دستهی “اکثرا مرفه”، “متعادل” و “اکثرا وضعیت نامساعد” تقسیم کردیم
+</p>
+
+```{r economic}
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+امکانات آموزشی
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیران به سوالاتی در رابطه با امکانات آموزشی مدرسه را بررسی کردیم.
+</p>
+
+
+
+```{r resource}
+
+```
+
+
+
+####School Climate
+
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت محیط مدارس را از دیدگاه مدیر، معلمان ریاضی و علوم دسته بندی کردیم و میانگین هر دسته را نمایش دادیم.
+</p>
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه مدیر
+</p>
+ <br>
+ 
+
+```{r principal}
+
+```
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه معلمان ریاضی
+</p>
+<br>
+
+
+```{r teacher}
+
+```
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+از دیدگاه معلمان علوم
+</p>
+
+<br>
+
+```{r science}
+
+```
+
+
+####School Discipline and Safety
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیر، معلمان و دانش آموزان را در رابطه با امنیت و نظم مدرسه بررسی کردیم.
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+امنیت مدرسه: آزار و اذیت دانش آموزان
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت تاثیر آزار و اذیتی که از جانب سایر دانش آموزان میرسد را بر امتیاز دانش آموزان بررسی کردیم.
+</p>
+<br>
+
+```{r bullying}
+
+```
+<br>
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+امنیت مدرسه: دیدگاه معلمان
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ معلمان به سوالاتی از قبیل “مکان مدرسه”،  “احساس امنیت معلمان در مدرسه”، “احترام دانش آموزان به معلمان”، “قوانین مدرسه” و … را بررسی کردیم"
+</p>
+
+
+
+```{r safe}
+
+```
+<br>
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+نظم مدرسه: دیدگاه مدیر
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت پاسخ مدیران به سوالاتی در رابطه با مشکلات داخل مدرسه از قبیل  “تاخیر”، “غیبت”، “تقلب”، “شلوغی کلاس”، “دزدی” و .. را بررسی کردیم.
+</p>
+<br>
+
+```{r principal2}
+
+
+```
+
+####Student Engagement and Attitudes
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت دیدگاه دانش آموزان نسبت به درس ریاضی را بررسی کردیم
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+علاقه به ریاضی
+</p>
+<br>
+```{r likemath}
+
+```
+
+<br>
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+اعتماد به نفس در ریاضی
+</p>
+ <br> 
+ 
+***
+
+```{r confidence}
+```
+
+<br>
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+اهمیت ریاضی برای دانش آموزان
+</p>
+<br> 
+
+```{r value}
+
+```
+

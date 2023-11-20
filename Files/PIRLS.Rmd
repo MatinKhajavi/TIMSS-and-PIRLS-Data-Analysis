@@ -1,0 +1,589 @@
+---
+title: ""
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',message = F)
+knitr::read_chunk("PIRLS.R")
+
+```
+
+```{r dataSection,echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+
+<p align="center" style="font-size:23pt; font-family:Calibri">
+PIRLS 2016
+</p>
+
+<br> 
+
+<p align="left" style="font-size:19pt; font-family:Calibri">
+A Study of Contributing Factors in Student Performance
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we've analysed the impact of different factors on students' scores. In order to do so, we have broken down these factors to smaller elements. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+To show the effects of each element, we will use the ANOVA hypothesis test. We have also drawn two charts for each element. This information was gathered based on the answers the principal, the teachers, and the students themselves offered for the exam's questionnaire. 
+</p>
+
+
+###Pirls {.tabset}
+
+####Home Environment Support
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+First we will look through each factor in general, and afterwards we shall dig deeper into each subfactor by performing hypothesis tests and providing visual aid. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students with more resources inside their homes perform better on the exams, which can clearly be seen from the chart below. 
+</p>
+
+<br>
+
+```{r }
+<<resource>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+There is a positive relationship between students' performance in the exam and the number of years the spent in pre-primary school.
+</p>
+
+<br>
+
+```{r }
+<<earlyStudy>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now, we go into more detail. 
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+A study on how house facilities effects student performance. 
+</p>
+
+<br>
+```{r }
+<<homeResources>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students with the ability to read before primary school, achieved higher scores compared to others. 
+</p>
+
+<br>
+
+```{r }
+<<earlyLiteracy>>
+```
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students with pre-primary education achieved higher scores. 
+</p>
+
+<br>
+
+
+```{r }
+<<preprimary>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students with the ability to read at the beginning of primary school, performed better. 
+</p>
+<br>
+
+```{r }
+<<literacy>>
+
+```
+
+####School Composition and Resources
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+First we will look through each factor in general, and afterwards we shall dig deeper into each subfactor by performing hypothesis tests and providing visual aid. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students' economic background has a notable effect on their performance. 
+</p>
+<br>
+
+
+```{r }
+<<school>>
+
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we dig deeper into each subfactor. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here we have examined the effect of students' socioeconomic background based on their principal's answers. We can see that students attending school where most of the population come from wealthy backgrounds, perform better than other schools. 
+</p>
+
+
+<br>
+
+
+```{r }
+<<schoolResources>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here we study the effect of resource shortages on teaching. Schools suffering from severe resource shortages clearly have a worse performance. 
+</p>
+<br>
+```{r }
+<<shortage>>
+```
+
+
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The effect the school's library size has. 
+</p>
+<br>
+
+
+```{r }
+<<library>>
+```
+
+####School Climate
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+First we will look through each factor in general, and afterwards we shall dig deeper into each subfactor by performing hypothesis tests and providing visual aid. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+School's emphasis on academic success is a very important factor which makes a big difference in students' scores. 
+</p>
+
+<br>
+
+```{r }
+<<emphasis>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we examine each subfactor closely. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+How satisfied the parents are by their children's school. 
+</p>
+<br>
+
+```{r }
+<<parents>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+School's emphasis on academic succcess. 
+</p>
+<br>
+```{r }
+<<schoolEmphasis>>
+```
+
+
+####School Discipline and Safety
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+First we will look through each factor in general, and afterwards we shall dig deeper into each subfactor by performing hypothesis tests and providing visual aid. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Harrassment on students, has a negative effect on their academics. 
+</p>
+<br>
+
+```{r }
+<<bullying>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now it's time to dig deeper. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The effect discipline has based on the principal's reports. 
+</p>
+
+<br>
+
+```{r }
+<<discipline>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The effect the school's safety has based on the teachers' reports. 
+</p>
+<br>
+```{r }
+<<orderly>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The effect harrassment and bullying has on students' performance. 
+</p>
+<br>
+
+```{r }
+<<studentBullying>>
+```
+
+
+####Classroom Instruction 
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri;  text-indent:30px">
+A study on different teaching methods
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Teaching the class as a whole
+</p>
+<br>
+
+
+```{r }
+<<organizing>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Teaching the class as a mixture of groups with different abilities
+</p>
+<br>
+
+```{r }
+<<mixedGroups>>
+```
+
+####Student Engagement and Attitudes
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+How students' contribution in class impacts their scores. 
+</p>
+<br>
+
+```{r }
+<<engaged>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+How students' confidence impacts their scores. 
+</p>
+<br>
+
+```{r }
+<<confidence>>
+```
+
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ بررسی عوامل موثر بر عملکرد دانش آموزان :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش به بررسی عوامل موثر در عملکرد دانش آموزان پرداخته ایم. هر یک از این عوامل کلی را با دسته بندی به عامل هایی کوچک تر بررسی کرده ایم.
+<br>
+برای نشان دادن تاثیر این عوامل از آزمون فرض Anova استفاده کرده ایم. همینطور برای هر یک ، دو نمودار نیز رسم شده است.
+این اطلاعات بر حسب جواب مدیر ، معلم ها ، والدین و خود دانش آموزان به پرسشنامه های آزمون بدست آمده است.
+</p>
+
+
+###Pirls {.tabset}
+
+####Home Environment Support
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+• ابتدا به صورت خلاصه بخشی از این عامل را بررسی می کنیم و بعد به صورت کلی تر هر یک از زیر بخش ها را با آزمون فرض و نمودار هر یک ، مورد بررسی قرار می دهیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+دانش آموزانی که در خانه دارای امکانات بیشتری هستند عملکرد بهتری دارند که از نمودار زیر مشخص است.
+</p>
+<br>
+
+```{r resource}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+رابطه مثبتی بین عملکرد در آزمون با تعداد سالی که در پیش دبستانی بوده اند وجود دارد.
+</p>
+<br>
+
+```{r earlyStudy}
+```
+
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+حال به صورت ریز به هر یک و مواردی دیگر می پردازیم.
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی وضعیت امکانات خانه بر روی عملکرد دانش آموزان.
+</p>
+<br>
+
+```{r homeResources}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+دانش آموزانی که قبل از دبستان دارای مهارت های خواندن بودند دارای عملکرد بهتری نسبت به بقیه هستند.
+</p>
+<br>
+
+```{r earlyLiteracy}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+عملکرد دانش آموزانی که آموزش قبل از ابتدایی دیده اند نسبت به بقیه بعتر است.
+</p>
+<br>
+
+```{r preprimary}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+عملکرد بهتر دانش آموزانی که توانایی خواندن در شروع ابتدایی داشته اند بهتر بوده است.
+</p>
+<br>
+
+```{r literacy}
+
+
+```
+
+####School Composition and Resources
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+• ابتدا به صورت خلاصه بخشی از این عامل را بررسی می کنیم و بعد به صورت کلی تر هر یک از زیر بخش ها را با آزمون فرض و نمودار هر یک ، مورد بررسی قرار می دهیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سطح اقتصادی خانواده ها تاثیر قابل توجهی بر عملکرد دانش آموزان دارد.
+</p>
+<br>
+
+```{r school}
+
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+حال به صورت ریز به هر یک و مواردی دیگر می پردازیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر وضعیت اقتصادی دانش آموزان بر عملکرد آن ها در آزمون اساس پاسخ مدیر مدارس. میبینیم که عملکرد مدارسی که بیشتر دانش آموزان آن از خانواده های مرفه هستند بهتر از بقیه مدارس می باشد.
+</p>
+<br>
+
+
+```{r schoolResources}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر کمبود امکانات بر روی تدریس. عملکرد مدارسی که کمبودی ندارند به طور واضح بهتر است.
+</p>
+<br>
+
+```{r shortage}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر اندازه کتاب خانه مدرسه بر عملکرد در آزمون Pirls.
+</p>
+<br>
+
+```{r library}
+
+```
+
+####School Climate
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+• ابتدا به صورت خلاصه بخشی از این عامل را بررسی می کنیم و بعد به صورت کلی تر هر یک از زیر بخش ها را با آزمون فرض و نمودار هر یک ، مورد بررسی قرار می دهیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاکید مدرسه بر موفقیت درسی هامل بسیار مهمی است که تفاوت زیادی در عملکرد دانش آموزان ایجاد می کند.
+</p>
+<br>
+
+```{r emphasis}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+حال به صورت ریز به هر یک و مواردی دیگر می پردازیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+میزان رضایت والدین نسبت به مدرسه فرزندشان.
+</p>
+<br>
+
+```{r parents}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاکید مدرسه بر موفقیت درسی بر روی عملکرد دانش آموزان اثر دارد.
+</p>
+<br>
+
+```{r schoolEmphasis}
+
+```
+
+####School Discipline and Safety
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+• ابتدا به صورت خلاصه بخشی از این عامل را بررسی می کنیم و بعد به صورت کلی تر هر یک از زیر بخش ها را با آزمون فرض و نمودار هر یک ، مورد بررسی قرار می دهیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+آزار دانش آموزان رابطه ای منفی با عملکردشان در آزمون دارد.
+</p>
+<br>
+
+```{r bullying}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+حال به صورت ریز به هر یک و مواردی دیگر می پردازیم.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر نظم مدرسه بر عملکرددر آزمون بر اساس گزارش مدیر.
+</p>
+<br>
+
+```{r discipline}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر میزان امنیت و نظم مدرسه بر عملکرد در آزمون بر اساس گزارش معلمان.
+</p>
+<br>
+
+```{r orderly}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر آزار دانش آموزان در عملکرد آن ها.
+</p>
+<br>
+
+```{r studentBullying}
+
+```
+
+
+####Classroom Instruction 
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+شیوه تدریس به صورت کلی و تاثیر آن.
+</p>
+<br>
+
+```{r organizing}
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی شیوه تدریس به صورت گروه هایی با افراد با توانایی های متفاوت.
+</p>
+<br>
+
+```{r mixedGroups}
+
+```
+
+####Student Engagement and Attitudes
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+بررسی تاثیر مشارکت دانش آموزان و عملکرد آن ها.
+</p>
+<br>
+
+```{r engaged}
+
+```
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+تاثیر اعتماد به نفس بر عملکرد دانش آموزان.
+</p>
+<br>
+
+```{r confidence}
+
+```

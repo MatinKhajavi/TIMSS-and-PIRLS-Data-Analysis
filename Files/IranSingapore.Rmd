@@ -1,0 +1,339 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',fig.width=17,fig.height=12,message = F)
+
+knitr::read_chunk("IranSingapore.R")
+```
+
+```{r dataSection, echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+ Comparing Iran to Singapore, The #1 Country in TIMSS
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, we focus on comparing Iran and Singapore in different areas.
+<br> 
+First we try to compare the two countries based on economic and education indicators. 
+<br>
+Below we have included the charts for each indicator. The time period chosen was between 2011 and 2014 (4 years time difference between the last two TIMSS exams.)
+</p>
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The chosen indicators were Government Expenditure on Education, Literacy Rate among youths, Percentage of Urban Population, Population Density, Life Expectency, etc.  
+</p>
+
+<br>
+
+```{r }
+<<lr>>
+```
+
+<br>
+
+```{r }
+<<le>>
+```
+
+<br>
+
+```{r }
+<<urbanPop>>
+```
+
+<br>
+
+```{r }
+<<population>>
+```
+
+<br>
+
+
+```{r }
+<<educationExpenditure>>
+```
+
+<br>
+
+```{r }
+<<popDensity>>
+```
+
+<br>
+
+```{r }
+<<infantMR>>
+```
+
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+As you can see, Singapore is better in these areas.  
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Comparing Performance in Mathematics And Science
+</p>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we would like to compare the average score of these two countries in each domain. 
+</p>
+
+
+```{r }
+<<iranvsSingapore>>
+```
+
+
+<br>
+
+
+```{r }
+<<iranvsSingapore2>>
+
+```
+
+<br>
+
+
+```{r }
+<<iranvsSingapore3>>
+```
+
+<br>
+
+
+```{r }
+<<iranvsSingapore4>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Singapore has a better performance by far. 
+</p>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Differences in Average Score From 2003 to 2015
+</p>
+
+<br>
+
+```{r }
+<<avgChange>>
+```
+
+
+<br>
+
+```{r }
+<<avgChange2>>
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Both countries have improved, but still Iran's performance is much lower. 
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Score Range
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this last section, we have drawn the score range for these two countries in both grades and subject. 
+</p>
+
+```{r }
+<<rangeScores>>
+```
+
+<br>
+
+```{r }
+<<rangeScores2>>
+```
+
+<br>
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Iran's lower bound is way lower than Singapore, but it's upper bound is somewhat closer. 
+</p>
+
+<br>
+<br>
+<br>
+
+##Farsi
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ مقایسه ایران و سنگاپور
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این بخش می خواهیم به مقایسه ایران و سنگاپور از جنبه های مختلف بپردازیم.
+<br>
+در ابتدا سعی به مقایسه دو کشور بر اساس شاخص های اقتصادی و تحصیلی می کنیم.
+<br>
+در زیر نمودار های هر یک از شاخص ها آمده است. بازه زمانی انتخاب شده بین 2011 تا 2014 (4 سال زمان بین دو آزمون آخر تیمز) می باشد.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+شاخص های انتخاب شده شامل :  هزینه برای تحصیلات توسط دولت ، میزان سوار بین جوانان ، درصد جمعیت شعر نشین ، چگالی جمعیت ، امید زندگی و ... می باشد.
+</p>
+
+<br>
+
+```{r lr}
+```
+
+<br>
+
+```{r le}
+```
+
+<br>
+
+```{r urbanPop}
+
+```
+
+<br>
+
+```{r population}
+```
+
+<br>
+
+```{r educationExpenditure}
+```
+
+<br>
+
+```{r popDensity}
+```
+
+<br>
+
+```{r infantMR}
+```
+
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همانطور که مشاهده می کنیم سنگاپور وضعیت بهتری از این لحاظ دارد.
+</p>
+
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin; text-indent:30px">
+مقایسه عملکرد در علوم و ریاضی در دو پایه :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال می خواهیم میانگین نمره هر کشور را در هر یک از زیر گروه ها مقایسه کنیم.
+</p>
+
+
+```{r iranvsSingapore}
+```
+
+<br>
+
+
+```{r iranvsSingapore2}
+
+```
+
+<br>
+
+
+```{r iranvsSingapore3}
+
+```
+
+<br>
+
+
+```{r iranvsSingapore4}
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سنگاپور با اختلاف دارای عملکرد بهتری می باشد.
+</p>
+
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin; text-indent:30px">
+تغییرات میانگین در طی 3 دوره آزمون ها بین سال های 2003 تا 2015 :
+</p>
+
+<br>
+
+```{r avgChange}
+```
+
+
+<br>
+
+```{r avgChange2}
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+هر دو کشور در طی این سال ها پیشرفت داشتند ولی هنوز عملکرد ایران بسیار پایین تر می باشد.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin; text-indent:30px">
+بازه نمرات دو کشور :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+برای آخرین قسمت می خواهیم نمودار بازه نمرات دو کشور را در هر دو رشته و هر دو پایه رسم کنیم.
+</p>
+
+```{r rangeScores}
+```
+
+<br>
+
+```{r rangeScores2}
+```
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+کف عملکرد ایران بسیار پایین تر از سنگاپور می باشد ولی عملکرد ماکسیمم ایران فاصله کمتری با ماکسیمم سنگاپور دارد.
+</p>
+
+<br>
+<br>
+<br>

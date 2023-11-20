@@ -1,0 +1,592 @@
+---
+title: ""
+output: html_document
+---
+
+
+```{r setup, include=FALSE, cache = F}
+
+knitr::opts_chunk$set(warning = FALSE, fig.align='center',fig.width=12,fig.height=8,message = F, error = T)
+knitr::read_chunk("FactorAnalysis.R")
+
+```
+
+```{r dataSection,echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+
+<br>
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+Grouping Countries Based on Students’ Opinion on Mathematics
+</p>
+
+
+<br>
+
+<p align="left" style="font-size:19pt; font-family:Calibri">
+□	Gathering The Data
+</p>
+
+<br> <br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□□	Based on Interest
+</p>
+
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We have considered the answers to these questions (questiones are writen directly from the questionnaire)
+</p>
+
+<br>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>I enjoy learning mathematics</li>
+  <li>I wish I did not have to
+study mathematics</li>
+  <li>Mathematics is boring </li>
+  <li>I learn many interesting
+things in mathematics</li>
+  <li>I like mathematics</li>
+  <li>I like any schoolwork that
+involves numbers</li>
+  <li>I like to solve
+mathematics problems</li>
+  <li>I look forward to
+mathematics class</li>
+  <li>Mathematics is one of
+my favorite subjects</li>
+</ul> 
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Students gave a score ranging from 1 to 5 to each question, 1 meaning Disagree a lot, 5 meaning Agree a lot. Afterwards we calculated the average score for each individual country to the questions. For example, you can view the gathered data for 3 selected countries in this table:
+</p>
+
+<br> <br> 
+```{r , echo = F}
+<<table>>
+```
+
+<br> <br> <br>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We performed the k-means algorithm on this data. The result of this algorithm can be seen in the biplot shown below:
+</p>
+
+
+<br> <br> <br>
+```{r , echo = F}
+<<biplot1>>
+```
+<br> <br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The correlation of the answers to each question with the top 5 principal components were as such:
+</p>
+
+
+<br> <br> <br>
+
+```{r , echo = F}
+<<corHC1>>
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□□	Based on Talent
+</p>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section and the one after, we have taken the same steps and the previous one. Therefor we refrain from repeting the descriptions. 
+</p>
+
+<br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We have considered the answers to these questions (questiones are writen directly from the questionnaire)
+</p>
+
+<br>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>I usually do well in mathematics</li>
+  <li>Mathematics is more difficult
+for me than for many of
+my classmates</li>
+  <li>Mathematics is not one of
+my strengths</li>
+  <li>I learn things quickly
+in mathematics</li>
+  <li>Mathematics makes me
+nervous</li>
+  <li>I am good at working out
+difficult mathematics problems</li>
+  <li>My teacher tells me I am good at mathematics </li>
+  <li>Mathematics is harder for me
+than any other subject</li>
+  <li>Mathematics makes me
+confused</li>
+</ul> 
+
+
+<br>
+
+
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+biplot
+</p>
+<br> <br> <br>
+```{r , echo = F}
+<<biplot2>>
+```
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Matrix
+</p>
+<br> <br> <br>
+
+```{r , echo = F}
+<<corHC2>>
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□□	Based on significance
+</p>
+
+<br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+We have considered the answers to these questions (questiones are writen directly from the questionnaire)
+</p>
+
+<br>
+
+<ul style="list-style-type:circle; font-size:15pt; font-family:Calibri" align="left">
+  <li>I think learning mathematics will help me in my daily life</li>
+  <li>I need mathematics to learn other school subjects</li>
+  <li>I need to do well in mathematics
+to get into the <university> of
+my choice</li>
+  <li>I need to do well in mathematics
+to get the job I want</li>
+  <li>I would like a job that involves
+using mathematics</li>
+  <li>It is important to learn about mathematics to get ahead in the world</li>
+  <li>Learning mathematics will
+give me more job opportunities
+when I am an adult</li>
+  <li>My parents think that it is
+important that I do well in mathematics </li>
+  <li>It is important to do well in mathematics</li>
+</ul> 
+
+<br>
+
+
+<br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+biplot
+</p>
+<br> <br> <br>
+```{r , echo = F}
+<<biplot3>>
+```
+<br> <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Correlation Matrix
+</p>
+<br> <br> <br>
+
+```{r , echo = F}
+<<corHC3>>
+```
+
+
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p align="left" style="font-size:19pt; font-family:Calibri">
+□	Performing Factor Analysis
+</p>
+
+<br> 
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section we have used the `psych` and `GPArotation` packages. 
+</p>
+
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+first we concatenate all the data used for the previous steps. Afterwards, using the `fa.parallel()` function we obtain the number of factors we need. 
+</p>
+
+<br> 
+```{r , echo=FALSE}
+<<data>>
+```
+
+```{r , echo = F, message = T}
+<<FA>>
+```
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+According to the chart, 3 factors seem sufficient. 
+</p>
+
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Next we much select a rotation model. For this data, we have selected the oblique model since based on the correlation matrices and the PCA charts displayed in the previous sections, it is clear that a few of the variables are correlated. 
+</p>
+
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Also, based on the instructions given in R's documentation:
+</p>
+
+
+> <p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+<i>
+fm = "minchi" will minimize the sample size weighted chi square when treating pairwise correlations with different number of subjects per pair.
+</i>
+</p>
+
+ <br> <br>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Finally, we run the algorithm. 
+</p>
+
+<br> <br>
+```{r , echo = F}
+<<FA2>>
+```
+
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here, you can view a diagram of the factors.  
+</p>
+
+<br> <br>
+
+```{r, echo = F}
+ fa.diagram(country.fa)
+```
+
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here, you can view a diagram of the factors.  
+</p>
+
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+At last, below you can see the result of the algorithm. 
+</p>
+
+
+<br> <br>
+```{r, echo = F}
+ country.fa
+```
+
+
+
+<br> <br> <br>
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:21pt; font-family:B Nazanin">
+• دسته بندی کشورها براساس نظراتشان در رابطه با ریاضی
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ جمع آوری داده
+</p>
+
+<br> <br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□□ بر حسب علاقه
+</p>
+
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سوالات زیر را انتخاب کردیم:
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>از یاد گرفتن ریاضیات لذت میبرم.</li>
+  <li>آرزو میکنم کاش لازم نبود ریاضی یاد بگیرم</li>
+  <li>ریاضی کسل کننده است</li>
+  <li>من خیلی مسائل جالبی در ریاضی یاد میگیرم</li>
+  <li>من ریاضی را دوست دارم</li>
+  <li>من هرگونه مشق مرتبط با ریاضی را دوست دارم</li>
+  <li>من حل مسائل ریاضی را دوست دارم</li>
+  <li>من چشم انتظار کلاس های ریاضیم هستم</li>
+  <li>ریاضی یکی از موضوعات موردعلاقه من است</li>
+  </ul> 
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+به هر سوال از ۱ تا ۴ امتیاز داده اند. ۱ به معنای کاملا مخالف و ۵ به معنای کاملا موافق است. سپس در هر سوال میانگین امتیاز دانش آموزان برای هر کشور را بدست آوردیم. برای مثال بدین صورت:
+</p>
+
+<br> <br> 
+```{r table, echo = F}
+
+```
+
+<br> <br> <br>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+سپس روی این داده الگوریتم k-means را اجرا کردیم. نتیجه ی این الگوریتم را بر روی نمودار biplot زیر مشاهده میفرمایید. 
+</p>
+
+<br> <br> <br>
+```{r biplot1, echo = F}
+
+```
+
+<br> <br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همچنین کورلیشن متغیرها را با مولفه های اصلی به دست آورده ایم:
+</p>
+
+<br> <br> <br>
+
+```{r corHC1, echo = F}
+```
+
+<br> <br>
+<hr> <hr>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□□ بر حسب استعداد
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت و همچنین قسمت بعد، همانند قسمت قبلی عمل کرده ایم، پس از توضیحات اضافی پرهیز میکنیم.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت سوالات زیر را بررسی کرده ایم:
+</p>
+
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>من معمولا در ریاضی خوب عمل میکنم</li>
+  <li>ریاضی برای من نسبت به بقیه ی همکلاسی هایم سخت تر است</li>
+  <li>ریاضی از نقات قوت من نیست </li>
+  <li>من سریع مسائل را در ریاضی یاد میگیرم</li>
+  <li>ریاضی باعث استرس من میشود</li>
+  <li>من در حل مسائل دشوار ریاضی قوی عمل میکنم</li>
+  <li>معلمم به من میگوید که من در ریاضی قوی هستم</li>
+  <li>ریاضی برای من سخت تر از درس های دیگر است</li>
+  <li>ریاضی باعث می شود من گیج بشوم</li>
+  </ul> 
+</p>
+
+<br>
+
+
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+نمودار biplot
+</p>
+<br> <br> <br>
+```{r biplot2, echo = F}
+
+```
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+ماتریس کورلیشن ها
+</p>
+<br> <br> <br>
+
+```{r corHC2, echo = F}
+```
+
+
+<br> <br>
+<hr> <hr>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□□ بر حسب اهمیت
+</p>
+
+<br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت سوالات زیر را بررسی کردیم:
+</p>
+
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+  <ul style="list-style-type:circle; font-size:15pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li>من فکر میکنم یادگیری ریاضی در زندگی روزمره به من کمک خواهد کرد</li>
+  <li>من به ریاضی نیاز دارم تا درس های دیگر را یاد بگیرم</li>
+  <li>من به ریاضی نیاز دارم تا بتوانم در دانشگاه مورد علاقه ام قبول شوم</li>
+  <li>من به ریاضی نیاز دارم تا بتوانم به شغل مورد علاقه ام برسم</li>
+  <li>من دوست دارم شغلی مرتبط با ریاضی داشته باشم</li>
+  <li>یادگیری ریاضی برای پیشرفت در دنیا مهم است</li>
+  <li>یادگیری ریاضی وقتی بزرگ بشوم برای من موقعیت های شغلی زیادی ایجاد خواهد کرد</li>
+  <li>والدینم فکر میکنند که مهم است که من در ریاضی خوب عمل کنم</li>
+  <li>قوی عمل کردن در ریاضی اهمیت دارد</li>
+  </ul> 
+</p>
+
+<br>
+
+
+<br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+نمودار biplot
+</p>
+<br> <br> <br>
+```{r biplot3, echo = F}
+
+```
+<br> <br> <br>
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin; text-indent:30px">
+ماتریس کورلیشن ها
+</p>
+<br> <br> <br>
+
+```{r corHC3, echo = F}
+```
+
+
+<br> <br>
+<hr> <hr>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ پیاده سازی factor analysis بر روی داده
+</p>
+
+<br> 
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این مرحله از پکیج های `psych` و `GPArotation` استفاده خواهیم کرد
+</p>
+
+<br> <br>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+ابتدا همه ی داده های سری قبل را به هم میچسبانیم.  سپس با استفاده از تابع `fa.parallel()` بررسی میکنیم که چه تعداد فاکتور لازم است:
+</p>
+
+<br> 
+```{r data, echo=FALSE}
+```
+
+```{r FA, echo = F, message = T}
+
+```
+<br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+با توجه به نتایج تابع میفهمیم ۳ فاکتور کافی است. 
+</p>
+
+<br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال باید مدل rotation را انتخاب کنیم. برای این داده ها مدل oblique را انتخاب کرده ایم زیرا با توجه به ماتریس های کورلیشن و نمودارهای PCA که در قسمت های قبل کشیدیم، واضح است که بین یک سری از متغیرها کورلیشن موجود است.
+</p>
+
+<br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+همچنین بر حسب توضیحات r :
+</p>
+
+> <p dir="LTR" align="left" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+fm = "minchi" will minimize the sample size weighted chi square when treating pairwise correlations with different number of subjects per pair.
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+مدل فاکتور کردن را از نوع minchi انتخاب کرده ایم.
+</p>
+ <br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+حال الگوریتم را اجرا میکنیم.
+</p>
+
+<br> <br>
+```{r FA2, echo = F}
+
+```
+
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+دیاگرام فاکتور ها را رسم میکنیم:
+</p>
+
+<br> <br>
+
+```{r, echo = F}
+fa.diagram(country.fa)
+```
+
+<br> <br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+فاکتور ها به نظر میرسد که درست تعیین شده اند. 
+</p>
+
+<br> <br>
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در نهایت نتیجه ی الگوریتم را نمایش میدهیم:
+</p>
+<br> <br>
+```{r, echo = F}
+country.fa
+```
+
+
+
+<br> <br> <br>
+

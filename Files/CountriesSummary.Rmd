@@ -1,0 +1,145 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE,fig.align='center',message = F)
+knitr::read_chunk("CountriesSummary.R")
+
+
+```
+
+```{r dataSection, echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+
+<br>
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+A Scoreboard Throughout Time
+</p>
+
+<br>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+
+□	A Summary of Each Country’s Rank and Status in TIMSS and PIRLS 2015
+</p>
+
+</p>
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section, using maps, we have shown the participant countries' statistics for PIRLS as well as TIMSS 4th and 8th grade in the year 2015. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Moving the cursor to each region, you can view information about that region such as total number of participants, female/male number of participansts, average score in Mathematics, etc. 
+</p>
+ 
+ <br>
+ 
+```{r timss8th}
+```
+
+ <br>
+ 
+
+
+```{r timss4th}
+```
+
+ <br>
+ <br>
+ 
+ 
+
+```{r }
+<<pirls>>
+```
+
+
+<br>
+<br>
+ 
+ 
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+
+□	An Overview of Countries' Performances Throughout Time in TIMSS 
+</p>
+
+<br>
+ 
+
+```{r }
+<<timssMotion>>
+```
+
+<br>
+<br>
+
+##Farsi
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ خلاصه وضعیت کشور ها در دو آزمون Timss و Pirls در سال 2015 :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت با استفاده از نقشه، وضعیت کشورهای شرکت کننده برای PIRLS و همچنین سال چهارم و هشتم TIMSS برای سال ۲۰۱۵  را نشان داده ایم. </p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+
+با بردن اشاره گر روی هر کشور اطلاعاتی از قبیل تعداد کل شرکت کننده ها، تعداد شرکت کننده های دختر، تعداد شرکت کننده های پسر، میانگین امتیاز در ریاضی و ...  نیز قابل مشاهده است.
+ </p>
+ 
+ <br>
+ 
+```{r timss8th}
+```
+
+
+ <br>
+ 
+
+
+```{r timss4th}
+```
+
+ <br>
+ <br>
+ 
+ 
+
+```{r pirls}
+
+```
+
+
+<br>
+<br>
+ 
+ 
+
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ مشاهده وضعیت کلی کشور ها در طول سال ها در آزمون Timss :
+</p>
+
+<br>
+ 
+
+```{r timssMotion}
+
+```
+
+<br>
+<br>
+

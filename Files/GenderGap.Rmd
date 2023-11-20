@@ -1,0 +1,626 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, fig.align='center',fig.width=17,fig.height=12,message = F)
+
+knitr::read_chunk("GenderGap.R")
+```
+
+```{r dataSection,echo=FALSE}
+```
+
+# {.tabset }
+
+##English
+<br> <br> 
+
+<p align="center" style="font-size:21pt; font-family:Calibri">
+ Gender Gap Analysis
+</p>
+<br> <br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+In this section we aim to analyse the difference between female and male performance in the exams and decide whether there really is a difference or not. 
+</p>
+
+<p align="left" style="font-size:19pt; font-family:Calibri">
+□	Visual Analysis
+</p>
+
+<br>
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	4th Grade Mathematics Average Difference
+</p>
+
+<br>
+
+```{r }
+<<gg4thmath>>
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	4th Grade Science Average Difference
+</p>
+
+<br>
+
+```{r }
+<<gg4thscience>>
+```
+
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	8th Grade Mathematics Average Difference
+</p>
+
+<br>
+
+```{r }
+<<gg8thmath>>
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	8th Grade Science Average Difference
+</p>
+<br>
+
+```{r }
+<<gg8thscience>>
+```
+
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+After viewing the charts above, it seems that in general, girls perform better than boys, especially in Science. 
+<br> 
+Before we jump to any conclusions, we dive deeper by drawing a few more charts. 
+</p>
+
+<br> <br>
+<hr>
+<br> 
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+By studying the most recent TIMSS exam, we would like to compare the benchmarks for girls and boys. 
+</p>
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	4th Grade Percentage in Each Benchmark
+</p>
+
+<br>
+
+```{r }
+<<benchmarks4thmath>>
+```
+
+
+<br>
+
+<br>
+
+```{r }
+<<benchmarks4thscience>>
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	8th Grade Percentage in Each Benchmark
+</p>
+
+<br>
+
+```{r }
+<<benchmarks8thmath>>
+```
+
+
+<br>
+<br>
+
+```{r }
+<<benchmarks8thscience>>
+```
+
+
+<br>
+<br>
+
+
+<p align="left" style="font-size:19pt; font-family:Calibri">
+□	Statistical Analysis
+</p>
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Based on the charts, one may infer that there is a difference in performance between girls and boys. Now we would like to analyse this from a statistician and mathematician's point of view. 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Pay attention to these two charts summarising female and male performance in 4th and 8th grade. 
+</p>
+
+```{r}
+ knitr::kable(iran4thGenderStat)
+```
+
+<br>
+
+```{r}
+ knitr::kable(iran8thGenderStat)
+```
+
+<br>
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Now we continue our analysis using a hypothesis test. 
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Difference in 8th Grade Mathematics
+</p>
+
+```{r}
+
+ t.test(iran8thBoys$mathScore,iran8thGirls$mathScore,alternative = "l")
+
+```
+
+<br>
+
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Difference in 8th Grade Science
+</p>
+
+```{r}
+ t.test(iran8thBoys$scienceScore,iran8thGirls$scienceScore,alternative = "l")
+```
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri">
+□	Difference in 4th Grade Mathematics
+</p>
+
+```{r}
+ t.test(iran4thBoys$mathScore,iran4thGirls$mathScore,alternative = "l")
+```
+
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Since the $p-value$ is higher, we cannot reject the null hypothesis of no difference between girls and boys. Therefor there is no statistically significant difference in these three groupings. 
+</p>
+
+<br>
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+However, now we analyse the difference in 4th grade science. 
+</p>
+
+```{r}
+ t.test(iran4thBoys$scienceScore,iran4thGirls$scienceScore,alternative = "l")
+```
+
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The obtained $p-value$ is low, therefor we can reject the null hypothesis and conclude that there is a statistically significant difference between girls and boys in 4th grade science. 
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri;  text-indent:30px">
+Not so fast! This conclusion is not necessarily correct.
+</p>
+
+<br>
+
+<p align="left" style="font-size:17pt; font-family:Calibri;  text-indent:30px">
+□	Statistical vs. Practical Significance : 
+</p>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+The notion of Statistical Significance that we specify using $p-value$ shows whether the difference between groups is a result of sampling error or not. 
+<br>
+In reality, every difference, given the sufficient sample size, becomes significant. 
+<br>
+In these situations, we must look for a Criterion to see whether this difference is significant in reality or not. In general is this difference suffiecient enough to be meaningful in reality. 
+<br> 
+Normally, Practical Significance is computed using a value called The Effect Size. In this part, to analyse Effect Size, we use Cohen’s d criterion:
+</p>
+
+$$
+d={\frac {{\bar {x}}_{1}-{\bar {x}}_{2}}{s}}={\frac {\mu _{1}-\mu _{2}}{s}}
+$$
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Here, $s$ is the Pooled Standard Deviation. 
+</p>
+
+$$
+s={\sqrt {\frac {(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}}}
+$$
+<br>
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+Which can be calculated using the fomula below as well. Based on the table, the level of meaningfulness can be obtained.  
+</p>
+
+
+$$
+t={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\text{SE}}}={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\frac {\text{SD}}{\sqrt {N}}}}={\frac {{\sqrt {N}}({\bar {X}}_{1}-{\bar {X}}_{2})}{SD}}
+$$
+
+
+$$
+d={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\text{SD}}}={\frac {t}{\sqrt {N}}}
+$$
+<br>
+<br>
+
+
+<table class="wikitable" align="center">
+<tbody><tr>
+<th><i>Effect size</i></th>
+<th><i>d</i></th>
+</tr>
+<tr>
+<td>Very small</td>
+<td align="left">0.01</td>
+</tr>
+<tr>
+<td>Small</td>
+<td align="left">0.20</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td align="left">0.50</td>
+</tr>
+<tr>
+<td>Large</td>
+<td align="left">0.80</td>
+</tr>
+<tr>
+<td>Very large</td>
+<td align="left">1.20</td>
+</tr>
+<tr>
+<td>Huge</td>
+<td align="left">2.0</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<br>
+
+
+<p align="left" style="font-size:15pt; font-family:Calibri;  text-indent:30px">
+After calculating d, we can see that it's value is very low, therefor we can conclude that there is no meaningful difference between boys and girls. 
+</p>
+
+<br> <br> 
+
+##Farsi
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ اختلاف دختران و پسران در آزمون Timss :
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin; text-indent:30px">
+دراین قسمت می خواهیم به اختلاف عملکرد دختران و پسران در آزمون ها بپردازیم و ببینیم که آیا واقعا اختلافی در عملکرد آن ها می باشد یا خیر.
+<br>
+ابتدا با کشیدن چند نمودار این موضوع را بررسی می کنیم.
+</p>
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ اختلاف میانگین عملکرد در ریاضی پایه چهارم در طول آزمون های اخیر :
+</p>
+
+<br>
+
+```{r gg4thmath}
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ اختلاف میانگین عملکرد در علوم پایه چهارم در طول آزمون های اخیر :
+</p>
+
+<br>
+
+```{r gg4thscience}
+
+```
+
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ اختلاف میانگین عملکرد در ریاضی پایه هشتم در طول آزمون های اخیر :
+</p>
+
+<br>
+
+```{r gg8thmath}
+```
+
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+□ اختلاف میانگین عملکرد در علوم پایه هشتم در طول آزمون های اخیر :
+</p>
+
+<br>
+
+```{r gg8thscience}
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+با مشاهده نتایج بالا به نظر می آید که عملکرد دختران به طور کلی مخصوصا در علوم از پسران بهتر می باشد.
+<br>
+قبل از هر نوع نتیجه گیری به بررسی بیشتر این موضوع با کشیدن چند نمودار دیگر می پردازیم.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+مقایسه درصد بنچ مارک های دختران و پسران :
+</p>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+با بررسی آزمون اخیر Timss می خوایم به مقایسه ای از بنچ مارک های دختران و پسران داشته باشیم.
+</p>
+
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+درصد کسب هر یک از بنچ مارک ها در بین دختران و پسران در پایه چهارم
+</p>
+
+<br>
+
+```{r benchmarks4thmath}
+
+```
+
+<br>
+
+<br>
+
+```{r benchmarks4thscience}
+
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+درصد کسب هر یک از بنچ مارک ها در بین دختران و پسران در پایه هشتم
+</p>
+
+<br>
+
+```{r benchmarks8thmath}
+
+```
+
+<br>
+<br>
+
+```{r benchmarks8thscience}
+```
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:19pt; font-family:B Nazanin">
+□ بررسی تفاوت عملکرد دختران و پسران از دیدگاه آماری :
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+اگر بخواهیم تنها با استفاده از نمودار ها نتیجه گیری کنیم به نظر می آید که بین عملکرد دختران و پسران تفاوت وجود دارد.
+<br>
+حال از دیدگاه ریاضی و آماری این مساله را مورد بررسی قرار می دهیم.
+<br>
+به دو جدول زیر که خلاصه وضعیت عملکرد دختران و پسران در دو پایه تحصیلی می باشد توجه کنید.
+</p>
+
+```{r}
+knitr::kable(iran4thGenderStat)
+```
+
+<br>
+
+```{r}
+knitr::kable(iran8thGenderStat)
+```
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+حال با آزمون فرض این مساله را بررسی میکنیم.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+تفاوت در ریاضی پایه هشتم
+</p>
+
+```{r}
+
+t.test(iran8thBoys$mathScore,iran8thGirls$mathScore,alternative = "l")
+
+```
+
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+تفاوت در علوم پایه هشتم
+</p>
+
+```{r}
+t.test(iran8thBoys$scienceScore,iran8thGirls$scienceScore,alternative = "l")
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+تفاوت در ریاضی پایه چهارم
+</p>
+
+```{r}
+t.test(iran4thBoys$mathScore,iran4thGirls$mathScore,alternative = "l")
+```
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+به دلیل بالا بودن P-Value این فرض نمی توان رد کرد پس تفاوت معناداری از لحاض آماری در این سه گروه وجود ندارد.
+</p>
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+اما حال به بررسی تفاوت در علوم پایه چهارم می پردازیم.
+</p>
+
+```{r}
+t.test(iran4thBoys$scienceScore,iran4thGirls$scienceScore,alternative = "l")
+```
+
+
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+مقدار P-Value کوچک شده است.
+<br>
+پس فرض صفر رد می شود و می توان گفت  که تفاوت معناداری بین دختران و پسران در علوم چهارم وجود دارد.
+</p>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+خیر ، این نتیجه گیری لزوما درست نیست.
+</p>
+
+<br>
+
+<p dir="RTL" align="right" style="font-size:17pt; font-family:B Nazanin">
+Statistical vs. Practical Significance : 
+</p>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+معناداری از لحاظ آماری که با P-Value آن را مشخص می کنیم نشان دهنده این است که تفاوت بین گروه ها به دلیل خطای اندازه گیری و نمونه گیری نمی باشد.
+<br>
+در واقع هر اختلافی ، اگر اندازه نمونه ما به اندازه کافی بزرگ باشد معنادار می شود.
+<br>
+در این مواقع ما باید به دنبال معیاری باشیم که ببینیم آیا در واقعیت نیز این تفاوت معنادار می باشد یا خیر. به طور کلی آیا این تفاوت به اندازه کافی بزرگ می باشد که در دنیای خارج نیز معنا داشته باشد.
+<br>
+Practical Significance را معمولا با معیار Effect Size بررسی می کنند.
+<br>
+در این قسمت برای بررسی Effect Size از معیار Cohen's d استفاده می کنیم.
+</p>
+
+$$
+d={\frac {{\bar {x}}_{1}-{\bar {x}}_{2}}{s}}={\frac {\mu _{1}-\mu _{2}}{s}}
+$$
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+s در اینجا Pooled S.D.  می باشد.
+</p>
+
+$$
+s={\sqrt {\frac {(n_{1}-1)s_{1}^{2}+(n_{2}-1)s_{2}^{2}}{n_{1}+n_{2}-2}}}
+$$
+<br>
+
+<p dir="RTL" align="right" style="font-size:15pt; font-family:B Nazanin">
+که به طور کلی به صورت زیر نیز مشخص می شود و همینطور بر اساس جدول زیر ، مقدار معنادار بودن مشخص می شود.
+</p>
+
+
+$$
+t={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\text{SE}}}={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\frac {\text{SD}}{\sqrt {N}}}}={\frac {{\sqrt {N}}({\bar {X}}_{1}-{\bar {X}}_{2})}{SD}}
+$$
+
+
+$$
+d={\frac {{\bar {X}}_{1}-{\bar {X}}_{2}}{\text{SD}}}={\frac {t}{\sqrt {N}}}
+$$
+<br>
+<br>
+
+
+<table class="wikitable" align="center">
+<tbody><tr>
+<th><i>Effect size</i></th>
+<th><i>d</i></th>
+</tr>
+<tr>
+<td>Very small</td>
+<td align="left">0.01</td>
+</tr>
+<tr>
+<td>Small</td>
+<td align="left">0.20</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td align="left">0.50</td>
+</tr>
+<tr>
+<td>Large</td>
+<td align="left">0.80</td>
+</tr>
+<tr>
+<td>Very large</td>
+<td align="left">1.20</td>
+</tr>
+<tr>
+<td>Huge</td>
+<td align="left">2.0</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin">
+با بدست آوردن مقدار d می بینیم که مقدار آن بسیار کوچک می شود پس نتیجه گیری می کنیم که تفاوت معناداری بین دختران و پسران نمی باشد.
+<br>
+</p>
+
