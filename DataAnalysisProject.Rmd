@@ -1,0 +1,363 @@
+---
+title: "Data Analysis Project"
+output: html_document
+---
+
+# {.tabset }
+
+## English
+<p dir="LTR" align="center" style="font-size:21pt; font-family:Arial">
+Analysis of TIMSS and PIRLS Competitions
+</p>
+<p dir="LTR" align="center" style="font-size:14pt; font-family:Arial">
+ Globally and specifically in Iran
+</p>
+<p dir="LTR" align="center" style="font-size:14pt; font-family:Arial">
+Matin Khajavi
+<br>
+Shabnam Sheikhha
+</p>
+***
+
+
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Comparison of Global Performance in TIMSS 2015
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+In this section, we first present a general report on the status of countries. Then we delve deeper, comparing the averages of countries in pairs using hypothesis testing. We also compare the status of countries in 2011 and 2015, as these student populations are roughly the same, allowing us to assess the progress or regression of countries.
+</p>
+
+<br>
+
+<a href="Files/CountriesComaprison.html">Comparison of Countries</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Comparison of the Gender Gap:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+This section examines the performance differences between boys and girls in various forms, including over different periods, their benchmark comparisons, and a statistical analysis of their performance differences.
+</p>
+
+<br>
+
+<a href="Files/GenderGap.html">Gender Gap</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Summary of Countries' Status Over Different Periods:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+As mentioned in the proposal, this section provides a summary of the countries' status and performance using maps and motion capabilities (Motion).
+</p>
+
+<br>
+
+<a href="Files/CountriesSummary.html">Summary Of Participating Countries' Rank And Status</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Relationship Between Performance in Mathematics and Science:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+Naturally, it is clear that there is a relationship between mathematics and science. We aim to explore this relationship and clarify the links between them.
+</p>
+
+<br>
+
+<a href="Files/RelationshipBetweenMathAndScience.html">Relationship Between Math And Science</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Categorization of Countries Based on TIMSS Results 2007 - 2015
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+In this section, we obtained the average performance of countries in various fields. We then categorized them into groups using different cluster analysis methods. Ultimately, we found that these groupings are roughly consistent with the benchmark categories of TIMSS.
+</p>
+
+<br>
+
+<a href="Files/ClusterAnalysis.html">Clustering Based on Scores</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Categorization of Countries Based on Students' Opinions About Mathematics
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+We often hear that interest is important first, then talent. In this section, to examine this issue, we categorized countries based on students' opinions about mathematics using factor analysis methods. By examining the classifications, it is evident that countries with a more positive view of mathematics also have stronger scores.
+</p>
+
+<br>
+
+<a href="Files/FactorAnalysis.html">Using Factor Analysis on Students' Opinions</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Comparing Iran with Singapore (The Top Country in These Exams):
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+One way to identify problems and improve them is to see how the best performers have acted. Here, we compare Iran with Singapore from various perspectives.
+</p>
+
+<br>
+
+<a href="Files/IranSingapore.html">Iran vs. Singapore</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Examination of Factors Affecting Students' Performance:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+In the following three sections, we conduct a detailed examination of the factors influencing students' performance.
+</p>
+
+<br>
+
+<a href="Files/Pirls.html">Pirls 2016</a>
+
+<a href="Files/TIMSS_8th_Grade.html">Timss 8th Grade 2015</a>
+
+<a href='Files/TIMSS_4th_Grade.html'>Timss 4th Grade 2015</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Iran's Performance Over the Years in the TIMSS Assessment:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+We present a report on Iran's overall situation, such as global ranking, number of participants, average scores in different areas, etc.
+</p>
+
+<br>
+
+<a href="Files/IRAN.html">IRAN Throughout The Years</a>
+
+<br>
+<br>
+
+<p dir="LTR" align="left" style="font-size:18pt; font-family:Arial">
+□ Performance of Successful Countries in PIRLS 2015 and the Concept of a Good Reader:
+</p>
+
+<p dir="LTR" align="left" style="font-size:16pt; font-family:Arial; text-indent:30px">
+We examine the successful countries in the PIRLS test and also explore the concept of a good reader and who qualifies as one.
+</p>
+
+<br>
+
+<a href="Files/GOOD_READER_GOOD_COUNTRIES.html">What Makes a Good Reader ?</a>
+
+<br>
+<br>
+
+## Farsi
+<p dir="RTL" align="center" style="font-size:21pt; font-family:B Nazanin">
+بررسی مسابقات تیمز و پرلز
+</p>
+<p dir="RTL" align="center" style="font-size:14pt; font-family:B Nazanin">
+ در سطح جهانی و به صورت خاص در ایران
+</p>
+<p dir="RTL" align="center" style="font-size:14pt; font-family:B Nazanin">
+شبنم شیخها
+<br>
+متین خواجوی
+</p>
+***
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+• به دلیل حجم زیاد پروژه در صفحه اصلی به شرح کلی هر بخش می پردازیم و برای دیدن آن بخش با کلیک بر روی لینک قرار داده شده ، به فایل آن بخش منتقل می شوید. ( فایل ها به صورت Locally نیز در پوشه Files قرار داده شده است.)
+</p>
+
+<br>
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ مقایسه ی عملکرد جهانی در TIMSS 2015
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در این بخش ابتدا برای مقایسه گزارشی کلی از وضعیت کشورها ارائه داده ایم. سپس دقیق تر شدیم و بین دو به دوی کشورها میانگینشان را با آزمون فرض مقایسه کردیم. هم چنین وضعیت کشور ها در سال ۴ م ۲۰۱۱ و سال ۸ م ۲۰۱۵ را نیز مقایسه کردیم. علت این انتخاب این بود که میتوان گفت این جامعه ی آماری کم و بیش شامل همان دانش آموزان می شود و میخواستیم پیشرفت یا پسرفت کشورها را بیابیم
+</p>
+
+<br>
+
+<a href="Files/CountriesComaprison.html">Comparison of Countries</a>
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ مقایسه تفاوت بین دختران و پسران (Gender Gap) :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در این بخش به تفاوت عملکرد دختران و پسران در شکل های متفاوت می پردازیم. از جمله در طول دوره های مختلف ، مقایسه بنچ مارک های آن ها و همینطور بررسی تفاوت عملکرد آن ها  به صورت آماری.
+</p>
+
+<br>
+
+<a href="Files/GenderGap.html">Gender Gap</a>
+
+<br>
+<br>
+
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ خلاصه وضعیت کشور ها در طول دوره های مختلف :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در این بخش همانطور که در طرح پیشنهادی نیز گفته بودیم با استفاده از نقشه و قابلیت پویانمایی (Motion) خلاصه ای از وضعیت کشور ها و عملکرد آن ها ارائه می دهیم.
+</p>
+
+<br>
+
+<a href="Files/CountriesSummary.html">Summary Of Participating Countries' Rank And Status</a>
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ رابطه بین عملکرد در ریاضی و علوم :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+به طور طبیعی روشن است که بین ریاضی و علوم رابطه ای وجود دارد. می خواهیم  به این رابطه بپردازیم و روابط بین آن ها را مشخص کنیم.
+</p>
+
+<br>
+
+<a href="Files/RelationshipBetweenMathAndScience.html">Relationship Between Math And Science</a>
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ دسته بندی کشورها بر اساس نتایج TIMSS 2007 - 2015
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در این قسمت میانگین عملکرد کشور ها در زمینه های مختلف را بدست آوردیم. سپس با استفاده از روشهای مختلف cluster analysis آن ها را به چند دسته تقسیم کردیم. در نهایت نیز متوجه شدیم که دسته بندی ها تقریبا مطابق با دسته بندی های بنچ مارک های تیمز هستند.
+</p>
+
+<br>
+
+<a href="Files/ClusterAnalysis.html">Clustering Based on Scores</a>
+
+<br>
+<br>
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ دسته بندی کشورها براساس نظرات دانش آموزان در مورد ریاضی
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+تقریبا همیشه میشنویم که اول علاقه مهم است و سپس استعداد. در این قسمت برای بررسی این موضوع کشورها را بر اساس نظر دانش آموزان در رابطه با ریاضی با استفاده از روشهای factor analysis به چند دسته تقسیم کردیم. با بررسی دسته بندی ها میتوان دید که کشورهایی که نظر مثبت تری نسبت به ریاضی دارند نمراتشان نیز قوی تر است.
+</p>
+
+<br>
+
+<a href="Files/FactorAnalysis.html">Using Factor Analysis on Students' Opinions</a>
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ بررسی ایران با سنگاپور (برترین کشور این آزمون ها) :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+همیشه یکی از راه های پیدا کردن مشکلات و بهبود آن ها ، بررسی این است که برترین ها به چه روشی عمل کردند. حال در این جا نیز به بررسی ایران با سنگاپور از جنبه های مختلف می پردازیم.
+</p>
+
+<br>
+
+<a href="Files/IranSingapore.html">Iran vs. Singapore</a>
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ بررسی عوامل موثر بر عملکرد دانش آموزان :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در سه بخش زیر به بررسی کامل و جز به جز عوامل موثر در عملکرد دانش آموزان می پردازیم.
+</p>
+
+<br>
+
+<a href="Files/Pirls.html">Pirls 2016</a>
+
+<a href="Files/TIMSS_8th_Grade.html">Timss 8th Grade 2015</a>
+
+<a href='Files/TIMSS_4th_Grade.html'>Timss 4th Grade 2015</a>
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ وضعیت ایران در طول سال ها در آزمون Timss :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+گزارشی از وضعیت کلی ایران (مانند رتبه ی جهانی، تعداد شرکت کننده ها، میانگین امتیاز در زمینه های مختلف و … ) ارائه داده ایم.
+</p>
+
+<br>
+
+<a href="Files/IRAN.html">IRAN Throughout The Years</a>
+
+<br>
+<br>
+
+
+<p dir="RTL" align="right" style="font-size:18pt; font-family:B Nazanin">
+□ عملکرد کشور های موفق در آزمون Pirls 2015 و مفهوم خواننده خوب :
+</p>
+
+<p dir="RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+به بررسی کشور های موفق در آزمون Pirls می پردازیم و همینطور مفهوم خواننده خوب را بررسی می کنیم و چه کسانی خواننده خوب می باشند.
+</p>
+
+<br>
+
+<a href="Files/GOOD_READER_GOOD_COUNTRIES.html">What Makes a Good Reader ?</a>
+
+<br>
+<br>
